@@ -1,1 +1,1 @@
-console.log('change');
+confirm("Are the latest feature completed?");
