@@ -1,1 +1,1 @@
-console.log('change');
+prompt("Is the feature completed?", "Sure");
