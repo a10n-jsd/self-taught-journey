@@ -1,1 +1,2 @@
-prompt("Is the feature completed?", "Sure");
+confirm("Are the latest feature completed?");
+
