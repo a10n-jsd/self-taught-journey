@@ -1,1 +1,1 @@
-console.log("completed");
+console.info("feature 1 is developed");
