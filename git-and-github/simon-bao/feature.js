@@ -1,1 +1,2 @@
-console.info("feature 2 is developed");
+console.info("feature 1 and 2 are developed");
+
