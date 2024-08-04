@@ -1,0 +1,61 @@
+div {
+  font-family: Arial;
+  font-size: 13px;
+}
+
+.left-sidebar {
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: fixed;
+  background-color: rgb(33, 33, 33);
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.server-picture {
+  /* set to block-element instead wrap the image with div */
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-bottom: 6px;
+}
+
+.mid-sidebar {
+  width: 150px;
+  padding-top: 10px;
+  padding-right: 14px;
+  padding-left: 14px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 70px;
+  background-color: rgb(55, 55, 55);
+}
+
+.mid-sidebar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.info {
+  font-weight: bold;
+  color: rgb(216, 216, 216);
+}
+
+.handle {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(146, 146, 146);
+}
+
+.channel {
+  color: rgb(146, 146, 146);
+  padding-left: 8px;
+  margin-bottom: 14px;
+}
