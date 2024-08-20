@@ -1,0 +1,33 @@
+p {
+  font-family: Arial;
+  font-size: 12px;
+  margin: 0;
+  color: rgb(128, 128, 128);
+}
+
+.email {
+  margin-bottom: 4px;
+}
+
+.email-input {
+  width: 335px;
+  height: 20px;
+  border-width: 2px;
+  border-color: rgb(128, 128, 128);
+  margin-bottom: 15px;
+}
+
+.link-agreement {
+  margin-bottom: 12px;
+}
+
+.join-button {
+  background-color: rgb(23, 139, 248);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 350px;
+  border-radius: 20px;
+  border-style: none;
+}

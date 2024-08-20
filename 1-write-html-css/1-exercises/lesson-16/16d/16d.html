@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 16d</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/video.css">
+  </head>
+  <body style="
+    height: 3000px;
+    padding-top: 60px;
+    padding-left: 80px;
+  ">
+    <div style="
+      background-color: black;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      z-index: 200;
+    ">header</div>
+
+    <div class="video-grid">
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.youtube.com/watch?v=h-grthPvpB0">
+            <img class="thumbnail" src="thumbnails/thumbnail-1.webp">
+          </a>
+          <div class="video-time">8:49</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+              <div class="channel-tooltip-container">
+              <a href="https://www.youtube.com/channel/UCB6dvaWu0N8uVq2yKsZ5s5g">
+                <img src="channel-pictures/channel-1.jpg" alt="SuperSimpleDev" class="profile-picture">
+              </a>
+              <div class="channel-tooltip">
+                <img src="channel-pictures/channel-1.jpg" alt="SuperSimpleDev" class="channel-tooltip-picture">
+                <div class="channel-tooltip-detail">
+                  <div class="channel-tooltip-name">SuperSimpleDev</div>
+                  <div class="channel-tooltip-stats">483K subscribers</div>
+                </div>
+              </div>
+              </div>
+          </div>
+          <!-- If we remove the space between div tag, it will remove the space (the main problem with display: inline-block) -->
+          <div class="video-info">
+            <p class="video-title">
+              <a href="https://www.youtube.com/watch?v=h-grthPvpB0">How to become a software engineer with no experience</a>
+            </p>
+            <p class="video-author">
+              SuperSimpleDev
+            </p>
+            <p class="video-stats">
+              499.87K views &#183; 3 years ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.youtube.com/watch?v=gi0WsbIktCE"">
+            <img class="thumbnail" src="thumbnails/thumbnail-2.webp">
+          </a>
+          <div class="video-time">7:13</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <div class="channel-tooltip-container">
+            <a href="https://www.youtube.com/channel/UCp6RQPx3yxyOULaK4sFwcDA">
+              <img src="channel-pictures/channel-2.jpg" alt="V87 Garden" class="profile-picture">
+            </a>
+            <div class="channel-tooltip">
+              <img src="channel-pictures/channel-2.jpg" alt="V87 Garden" class="channel-tooltip-picture">
+              <div class="channel-tooltip-detail">
+                <div class="channel-tooltip-name">V87 Garden</div>
+                <div class="channel-tooltip-stats">83.5K subscribers</div>
+              </div>
+            </div>
+            </div>
+        </div>
+
+          <div class="video-info">
+            <p class="video-title">
+              <a href="https://www.youtube.com/watch?v=gi0WsbIktCE">Easy Grow Melons in Container at Home</a>
+            </p>
+            <p class="video-author">
+              V87 Garden
+            </p>
+            <p class="video-stats">
+              3.849 views &#183; 1 years ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <a href="https://www.youtube.com/watch?v=-teTOorUK8s">
+            <img class="thumbnail" src="thumbnails/thumbnail-3.webp">
+          </a>
+          <div class="video-time">8:39</div>
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <div class="channel-tooltip-container">
+            <a href="https://www.youtube.com/channel/UCa1zuotKU4Weuw_fLRnPv0A">
+              <img src="channel-pictures/channel-3.jpg" alt="Vue Mastery" class="profile-picture">
+            </a>
+            <div class="channel-tooltip">
+              <img src="channel-pictures/channel-3.jpg" alt="Vue Mastery" class="channel-tooltip-picture">
+              <div class="channel-tooltip-detail">
+                <div class="channel-tooltip-name">Vue Mastery</div>
+                <div class="channel-tooltip-stats">71,100 subscribers</div>
+              </div>
+            </div>
+            </div>
+        </div>
+          <div class="video-info">
+            <p class="video-title">
+              <a href="https://www.youtube.com/watch?v=-teTOorUK8s">How to get hired as a Vue developer in 2023</a>
+            </p>
+            <p class="video-author">
+              Vue Mastery
+            </p>
+            <p class="video-stats">
+              7.6K views &#183; 1 year ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>

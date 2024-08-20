@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 9e</title>
+    <style>
+      .wrapper {
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+        display: inline-block;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .user-thumbnail {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 25px;
+        /* vertical align's only works for an inline elements: i.e. img, button, and input tags */
+        vertical-align: middle;
+      }
+
+      .tweet-text {
+        color: rgb(128, 128, 128);
+        margin-left: 8px;
+        margin-right: 8px;
+        width: 250px;
+        border-style: none;
+        vertical-align: middle;
+      }
+
+      .tweet-button {
+        background-color: rgb(89, 150, 231);
+        color: rgb(255, 255, 255);
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-right: 15px;
+        padding-left: 15px;
+        border-style: none;
+        border-radius: 15px;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="img/Oliver.jpg" alt="cat: oliver" class="user-thumbnail">
+      
+      <input type="text" placeholder="What's happening?" class="tweet-text">
+      <button class="tweet-button">
+        Tweet
+      </button>
+    </div>
+  </body>
+</html>

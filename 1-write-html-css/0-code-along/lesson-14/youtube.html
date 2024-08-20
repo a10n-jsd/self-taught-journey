@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube.com Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/video.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="left-section">
+        <img src="icons/hamburger-menu.svg" class="hamburger-menu">
+        <img src="icons/youtube-logo.svg" alt="youtube logo" class="youtube-logo">
+      </div>
+      <div class="middle-section">
+        <input class="search-bar" type="text" placeholder="Search">
+        <button class="search-button">
+          <img src="icons/search.svg" class="search-icon">
+        </button>
+        <button class="voice-search-button">
+          <img src="icons/voice-search-icon.svg" class="voice-search-icon">
+        </button>
+      </div>
+      <div class="right-section">
+        <img src="icons/upload.svg" class="upload-icon">
+        <img src="icons/youtube-apps.svg" class="youtube-apps-icon">
+        <img src="icons/notifications.svg" class="notifications-icon">
+        <img src="channel-pictures/my-channel.jpg" class="current-user-picture">
+      </div>
+    </div>
+    
+    <div class="sidebar">Sidebar</div>
+    
+    <div class="video-grid">
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-1.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-1.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <!-- If we remove the space between div tag, it will remove the space (the main problem with display: inline-block) -->
+          <div class="video-info">
+            <p class="video-title">
+              How to become a software engineer with no experience
+            </p>
+            <p class="video-author">
+              SuperSimpleDev
+            </p>
+            <p class="video-stats">
+              499.87K views &#183; 3 years ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-2.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-2.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Easy Grow Melons in Container at Home
+            </p>
+            <p class="video-author">
+              V87 Garden
+            </p>
+            <p class="video-stats">
+              3.849 views &#183; 1 years ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-3.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-3.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              How to get hired as a Vue developer in 2023
+            </p>
+            <p class="video-author">
+              Vue Mastery
+            </p>
+            <p class="video-stats">
+              7.6K views &#183; 1 year ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-4.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-4.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              The Importance of Specialization in Coding
+            </p>
+            <p class="video-author">
+              Traversy Media
+            </p>
+            <p class="video-stats">
+              194K views &#183; 1 month ago
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-5.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-5.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              Stop the Flexbox for 1D, Grid for 2D layout nonsense
+            </p>
+            <p class="video-author">
+              Kevin Powell
+            </p>
+            <p class="video-stats">
+              27K views &#183; 2 days ago
+          </div>
+        </div>
+      </div>
+
+      <div class="video-preview">
+        <div class="thumbnail-row">
+          <img class="thumbnail" src="thumbnails/thumbnail-6.webp">
+        </div>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <img src="channel-pictures/channel-6.jpg" alt="SuperSimpleDev" class="profile-picture">
+          </div>
+          <div class="video-info">
+            <p class="video-title">
+              How To Run A Faster 5k
+            </p>
+            <p class="video-author">
+              Global Triathlon Network
+            </p>
+            <p class="video-stats">
+              299K views &#183; 4 years ago
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

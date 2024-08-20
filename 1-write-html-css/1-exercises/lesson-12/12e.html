@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 12e</title>
+    <style>
+      p {
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial;
+        width: 300px;
+        border: 2px solid rgb(238, 230, 230);
+        border-radius: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      .badge-number {
+        background-color: rgb(104, 104, 209);
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="menu">
+          <p class="menu-name">Home</p>
+          <div class="badge-number">14</div>
+        </div>
+
+        <div class="menu">
+          <p class="menu-name">Notifications</p>
+          <div class="badge-number">3</div>
+        </div>
+
+        <div class="menu">
+          <p class="menu-name">Messages</p>
+          <div class="badge-number">5</div>
+        </div>
+
+      </div>
+  </body>
+</html>
