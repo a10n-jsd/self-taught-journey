@@ -1,0 +1,29 @@
+/* import example */
+@import "vars.css";
+@import url("card.css");
+
+/* preset-env example */
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+@custom-media --viewport-small (width <= 500px);
+
+/* simple-vars */
+$lightColor: #fafafa;
+
+
+body {
+  background-color: $darkColor;
+}
+
+
+/* autoprefixer example */
+input::placeholder {
+  color: blue;
+}
+
+/* preset-env example */
+:--heading {
+  @media (--viewport-small) {
+    font-size: 40px;
+  }
+}
+

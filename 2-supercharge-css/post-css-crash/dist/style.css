@@ -1,0 +1,30 @@
+/* import example */
+.card {
+  /* nesting now can be written by regular css with "&" */
+  padding: 20px;
+  margin-top: 20px;
+  border: 2px solid gray;
+  width: 500px;
+}
+.card h2 {
+    color: orange;
+  }
+/* preset-env example */
+/* simple-vars */
+body {
+  background-color: red;
+}
+/* autoprefixer example */
+input::-moz-placeholder {
+  color: blue;
+}
+input::placeholder {
+  color: blue;
+}
+/* preset-env example */
+@media (max-width: 500px) {
+h1, h2, h3, h4, h5, h6 {
+    font-size: 40px;
+}
+  }
+

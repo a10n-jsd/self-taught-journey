@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>PostCSS Crash Course</title>
+</head>
+<body>
+  <h3>PostCSS Crash</h3>
+
+  <!-- plugin 1: autoprefixer -->
+  <!-- autoprefixer adds vendor prefixes for you, using data from Can I Use. -->
+  <!-- Write your CSS rules without vendor prefixes (in fact, forget about them entirely) -->
+  <form>
+    <input type="text" placeholder="Enter your search term">
+  </form>
+
+  <!-- plugin 2: preset-env -->
+  <!-- postcss-preset-env lets you convert modern CSS into something most browsers can understand, determining the polyfills you need based on your targeted browsers or runtime environments.
+ -->
+ <div class="card">
+  <h2>Card</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis nemo fuga similique nesciunt tempore nulla ullam quibusdam rem eum. Saepe est at nulla dolorum sed provident veniam nobis, fuga molestias?</p>
+ </div>
+
+ <!-- plugin 3: precss -->
+ <!-- precss allow use sass-like markup in your css. However, this plugin no longer maintained, https://github.com/csstools/precss -->
+ <!-- For variable sugar syntax, luckily there's a plugin called: postcss-simple-vars -->
+
+ <!-- plugin 4: import -->
+ <!-- postcss-import inlines the stylesheets referred to by @import rules. -->
+
+ <!-- plugin 5: assets -->
+ <!-- The repository has been archived by the owner on Aug 12, 2022. -->
+
+ <!-- plugin 6: cssnano -->
+ <!-- cssnano contains plugins that optimize CSS size for use in production. -->
+</body>
+</html>
