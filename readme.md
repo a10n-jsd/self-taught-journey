@@ -62,6 +62,8 @@ Learn how to build websites with HTML and CSS
 
 > [HTML CSS Reference](https://supersimpledev.github.io/references/html-css-reference.pdf)
 
+> Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=label%3Awrite-html-css+is%3Aclosed)
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
