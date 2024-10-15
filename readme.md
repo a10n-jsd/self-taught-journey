@@ -195,6 +195,20 @@ Learn how to build websites with HTML and CSS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Supercharge CSS
+Learn More about CSS and a kind of CSS framework built entirely on CSS custom properties (i.e., CSS variables) called Open Props.
+
+Course|Description
+:---|:---
+[Lesson 1](https://www.youtube.com/watch?v=SP8mSVSAh6s)| PostCSS Crash Course
+[Lesson 2](https://courses.kevinpowell.co/conquering-responsive-layouts)| Conquering Responsive Layout
+[Lesson 3.1](https://www.youtube.com/watch?v=cq7c3tawEnI)| Open Props
+[Lesson 3.2](https://www.youtube.com/watch?v=szPNMKZazzQ)| Open Props
+
+> Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aclosed+label%3Asupercharge-css+).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
