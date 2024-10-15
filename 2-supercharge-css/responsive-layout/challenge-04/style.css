@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+.hero {
+  padding: 4.8em 0;
+  background-color: #23424A;
+  color: white;
+}
+
+.hero__content {
+  width: 60%;
+}
+
+.hero__content p {
+  padding: 2.5rem 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #38cfd9;
+  color: #23424A;
+  padding: .75em 2em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity .125s;
+}
+
+.button:hover,
+.button:focus {
+  opacity: .75;
+}
+
+.row {
+  display: flex;
+  gap: 1.4rem;
+  text-align: center;
+}
+
+.three-col,
+.two-col {
+  padding: 3.5em 0;
+}
+
+.col p {
+  margin-top: 1.5rem;
+}
+
+.three-col__title{
+  color: #87629A;
+}
+
+.three-col__body {
+  color: #3A3A3A;
+}
+
+.two-col {
+  background-color: #136C72;
+  color: white;
+}

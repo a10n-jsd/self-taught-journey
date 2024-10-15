@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto;
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.hero {
+  padding: 4.8em 0;
+  background-color: #23424A;
+  color: white;
+}
+
+.container {
+  width: 80%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 60%;
+  /* border: 1px solid white; */
+}
+
+.content p {
+  margin-bottom: 3rem;
+}
+
+/* A white space between the button and the text can actually be set from the button's margin-top. We don't know if there will be another button in the hero one day. It's better to set it from another element that doesn't seem to change too much.   */
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  background-color: #38cfd9;
+  color: #23424A;
+  padding: .75em 2em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: opacity .125s;
+}
+
+.button:hover,
+.button:focus {
+  opacity: .75;
+}
