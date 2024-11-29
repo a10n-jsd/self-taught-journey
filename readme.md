@@ -29,6 +29,7 @@
         <li><a href="#learn-git-and-github">Learn Git and Github</a></li>
         <li><a href="#write-html-and-css">Write HTML-CSS</a></li>
         <li><a href="#supercharge-css">Supercharge CSS</a></li>
+        <li><a href="#build-things">Build Things</a></li>
         <li><a href="#add-interactivity-with-javascript">Add interactivity with JavaScript</a></li>
       </ul>
     </li>
@@ -286,12 +287,23 @@ Course|Description
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Build Things
+Working on real-life projects, will develop a more comprehensive understanding of programming concepts, improve skills, and gain a competitive edge in the job market.
+
+[Fronted Projects](https://roadmap.sh/projects?g=frontend)|Description
+:---|:---
+[-](#)| [-](#)
+[-](#)| [-](#)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Initialize with git
 - [x] Write HTML/CSS
 - [x] Supercharge CSS
+- [ ] Build Things
 - [ ] Add interactivity with JavaScript
 
 Fun Fact: There are notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aissue+is%3Aclosed).
