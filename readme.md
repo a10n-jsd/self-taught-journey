@@ -62,6 +62,8 @@ Learn how to build websites with HTML and CSS
 
 > [HTML CSS Reference](https://supersimpledev.github.io/references/html-css-reference.pdf)
 
+> Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=label%3Awrite-html-css+is%3Aclosed)
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -193,12 +195,103 @@ Learn how to build websites with HTML and CSS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Supercharge CSS
+Learn More about CSS and a tool for transforming CSS to increase code readability.
+
+Course|Description
+:---|:---
+[Lesson 1](https://www.youtube.com/watch?v=SP8mSVSAh6s)| [PostCSS Crash Course](https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/post-css-crash)
+[Lesson 2](https://courses.kevinpowell.co/conquering-responsive-layouts)| [Conquering Responsive Layout](https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout)
+
+<details>
+  <summary>CRL Contents</summary>
+  <ol>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-01">Challenge 01</a>
+        <ul>
+          <li>Percentages vs Fixed widths</li>
+          <li>Percentages on the child</li>
+          <li>CSS em and rem explained</li>
+          <li>Why it's a good idea to avoid heights</li>
+        </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-02">Challenge 02</a>
+      <ul>
+          <li>Getting familiar with relative units</li>
+          <li>CSS em and rem explained</li>
+          <li>Why you shouldn't set font-sizes using em</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-03">Challenge 03 </a>
+      <ul>
+          <li>CSS Units - vh, vw, vmin, vmax</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-04">Challenge 04 </a>
+      <ul>
+          <li>box-sizing - border-box explained</li>
+          <li>Why I use the BEM naming convention for my CSS</li>
+          <li>Flex-intro</li>
+          <li>Adding-space</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-05">Challenge 05 </a>
+      <ul>
+          <li>Reducing the amount of HTML needed</li>
+          <li>Adding a hero image</li>
+          <li>Column widths and flexbox</li>
+          <li>Ensuring the image is responsive</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-06">Challenge 06 </a>
+      <ul>
+          <li>A deeper dive into flexbox</li>
+          <li>Fancier up our navigation with flexbox</li>
+          <li>More improvements to the navigation</li>
+          <li>Centering things the easy way</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-07">Challenge 07 </a>
+      <ul>
+          <li>min(), max(), and clamp() are CSS magic!</li>
+          <li>Media query basics</li>
+          <li>Adding one to our layout</li>
+          <li>How do decide what breakpoints to use</li>
+          <li>meta-viewport</li>
+          <li>CSS Variables - An introduction to CSS custom properties</li>
+          <li>Writing mobile-first CSS</li>
+          <li>A look at min-height</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/challenge-08">Challenge 08 </a>
+      <ul>
+          <li>Responsive Navigation</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/a10n-jsd/self-taught-journey/tree/main/2-supercharge-css/responsive-layout/last-challenge">Last Challenge</a>
+    </li>
+  </ol>
+</details>
+</br>
+
+> Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aclosed+label%3Asupercharge-css+).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
 - [x] Initialize with git
 - [x] Write HTML/CSS
-- [ ] Supercharge CSS
+- [x] Supercharge CSS
 - [ ] Add interactivity with JavaScript
 
 Fun Fact: There are notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aissue+is%3Aclosed).
