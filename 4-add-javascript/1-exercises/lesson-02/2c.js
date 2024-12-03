@@ -1,0 +1,1 @@
+( 1850 + 2 * 750 ) / 100 // calculate money in cent to avoid inaccurate float numbers
