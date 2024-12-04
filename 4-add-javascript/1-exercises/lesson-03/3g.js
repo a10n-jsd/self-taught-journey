@@ -1,0 +1,1 @@
+'Total cost: $' + (599 + 295) / 100 // The operation order is () and then / operator
