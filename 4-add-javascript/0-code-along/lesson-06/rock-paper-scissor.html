@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissor game</title>
+  </head>
+  <body>
+    <p>Rock Paper Scissor game (light version)</p>
+    <!-- 
+      Reference: https://supersimple.dev/projects/booleans/
+     -->
+
+    <button onclick="
+      const randomNumber = Math.random();
+      // console.log(randomNumber);
+      
+      let computerMove;
+      /*
+        We can using Math.random(). This is how we can convert the random number into move.
+          0 --- 1/3 --- 2/3 ---- 1
+            rock   paper   scissor
+      */
+      
+      if (randomNumber > 0 && randomNumber < 1/3) {
+        computerMove = 'rock';
+      } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        computerMove = 'paper';
+      } else {
+        computerMove = 'scissor';
+      }
+      
+      let result;
+
+      if (computerMove === 'rock') {
+        result = 'Result is tie';
+      } else if (computerMove === 'paper') {
+        result = 'You lose!'
+      } else if (computerMove === 'scissor') {
+        result = 'You win!'
+      }
+      
+      alert(`You pick rock, Computer pick ${computerMove}. ${result}`);
+    ">Rock</button>
+
+    <button onclick="
+      const randomNumber = Math.random();
+      // console.log(randomNumber);
+
+      let computerMove;
+      
+      if (randomNumber > 0 && randomNumber < 1/3) {
+        computerMove = 'rock';
+      } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        computerMove = 'paper';
+      } else {
+        computerMove = 'scissor';
+      }
+      
+      let result;
+      
+      if (computerMove === 'rock') {
+        result = 'You win!'
+      } else if (computerMove === 'paper') {
+        result = 'Result is tie';
+      } else if (computerMove === 'scissor') {
+        result = 'You lose!'
+      }
+      
+      alert(`You pick paper, Computer pick ${computerMove}. ${result}`);
+    ">Paper</button>
+    
+    <button onclick="
+      const randomNumber = Math.random();
+      // console.log(randomNumber);
+
+      let computerMove;
+      
+      if (randomNumber > 0 && randomNumber < 1/3) {
+        computerMove = 'rock';
+      } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        computerMove = 'paper';
+      } else {
+        computerMove = 'scissor';
+      }
+
+      let result;
+
+      if (computerMove === 'rock') {
+        result = 'You lose!'
+      } else if (computerMove === 'paper') {
+        result = 'You win!'
+      } else if (computerMove === 'scissor') {
+        result = 'Result is tie';
+      }
+      
+      alert(`You pick scissor, Computer pick ${computerMove}. ${result}`);
+    ">Scissor</button>
+
+    <script>
+      // Strategy for developer:
+      /*  
+        1. Think about what step we need
+        2. Convert those step into code 
+      
+      */
+     
+      // Steps:
+      /*
+        When we click a button:
+        1. Computer randomly select a move
+        2. Compare the move to get the result
+        3. Display the result in popup 
+      */
+    </script>
+  </body>
+</html>

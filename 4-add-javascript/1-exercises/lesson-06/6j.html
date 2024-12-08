@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 6j</title>
+  </head>
+  <body>
+    <script>
+      const randomNumber = Math.random();
+      
+      
+      /*
+      let result;
+      
+      if (randomNumber < 0.5) {
+        result = 'Heads';
+      } else {
+        result = 'Tails';
+      }
+      */
+      
+      // Using ternary op. instead if-statement
+      const result = randomNumber < 0.5 ? 'Heads' : 'Tails';
+     
+      const guess = 'Heads';
+      
+      /*
+      if (result === guess) {
+        console.log('You win!');
+      } else {
+        console.log('You lose!');
+      }
+      */
+
+      // Using ternary op. instead if-statement
+      const message = guess === result ? 'You win!' : 'You lose!';
+ 
+      console.log(message);
+    
+    </script>
+  </body>
+</html>
