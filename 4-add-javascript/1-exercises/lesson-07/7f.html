@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 7f</title>
+  </head>
+  <body>
+    <script>
+      function convertTemperature(degrees, unit) {
+        let result;
+
+        if (unit === 'C') {
+          // const is used for result, which is a good practice for variables that do not need to be reassigned
+          // const result = convertToFahrenheit(degrees);
+          result = convertToFahrenheit(degrees);
+          return `${result}F`;
+          
+        } else if (unit === 'F') {
+          result = convertToCelsius(degrees);
+          return `${result}C`;
+        }
+
+      }
+
+      console.log(convertTemperature(25, 'C'));
+      console.log(convertTemperature(86, 'F'));
+
+      // The conversion functions: convertToFahrenheit and convertToCelsius should only handle the conversion logic and do not deal with output (string). This separation makes the code easier to test and understand
+
+      function convertToFahrenheit(celsius) {
+        return (celsius * 9 / 5) + 32;
+      }
+
+      function convertToCelsius(Fahrenheit) {
+        return (Fahrenheit - 32) * 5 / 9;
+      }
+    </script>
+  </body>
+</html>
