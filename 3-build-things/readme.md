@@ -3,4 +3,4 @@ Working on real-life projects, will develop a more comprehensive understanding o
 
 [The ever-growing list of projects ideas](https://roadmap.sh/projects)
 
-> [Frontend Projects](https://supersimpledev.github.io/references/html-css-reference.pdf)
+> [Frontend Projects](https://roadmap.sh/projects?g=frontend)
