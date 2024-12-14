@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 8i</title>
+  </head>
+  <body>
+    <p>Coin Flip game (simple version)</p>
+
+    <button onclick="
+      playGame('heads');
+      ">heads</button>
+
+    <button onclick="
+      playGame('tails');
+    ">tails</button>
+
+    <script>
+      
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        
+
+        const message = guess === result ? 'You win!' : 'You lose!';
+        alert(message);
+      }
+    
+    </script>
+  </body>
+</html>

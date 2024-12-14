@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+      const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+      */
+
+      /*
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1() {
+          console.log('function inside object');
+        }
+      };
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+      
+      console.log(product2.rating.count);
+      product2.fun();
+
+      console.log(typeof console.log);
+
+      console.log(JSON.stringify(product2));
+
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      */
+
+      // TOPIC: Auto-box
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+      
+      // How can strings have properties and methods?
+      // Answer: JavaScript automatically wraps that stings in a special objects. Now that strings have property: 'length' and method toUpperCase(). 
+
+
+      // TOPIC: Object as reference
+      const object1 = {
+        message: 'hello',
+        price: 799
+      };
+      const object2 = object1;
+
+      object1.message = 'Good job!';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: 'Good job!',
+        price: 799
+      };
+
+      console.log(object1 === object3); // false
+      console.log(object1 === object2); // true
+
+      // TOPIC: Shortcut for objects, destructuring
+      // destructuring is an easy way to take property out from an object
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      };
+
+      // const message = object1.message;
+      const { message, price: cost } = object4;
+      console.log(message);
+      console.log(cost);
+
+      // TOPIC: Shorthand property
+      const object5 = {
+        // message: message,
+        message, // this is shorthand for line above (97)
+        // method: function function1() {
+        //   console.log('method');
+        // }
+        method() {
+          console.log('method'); // // this is shorthand for line above (99)
+        }
+      };
+
+      console.log(object5);
+      object5.method();
+    </script>
+  </body>
+</html>

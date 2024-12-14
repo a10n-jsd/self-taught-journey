@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 8e</title>
+  </head>
+  <body>
+    <script>
+      const productA = {
+        name: 'basketball',
+        price: 3095
+      }
+
+      // For instance, here product1 and product2 reference the same object, thus they are equal:
+      const productB = productA;
+
+       // Two independent objects are not equal, even though they look alike:
+      const productC = {
+        name: 'basketball',
+        price: 3095
+      }
+
+      // Const objects can be modified
+      // An important side effect of storing objects as references is that an object declared as const can be modified.
+
+      function isSameProduct(product1, product2) {
+        return (
+          product1.name === product2.name &&
+          product1.price == product2.price
+        )
+      }
+
+      function isSameObject(product1, product2) {
+        // objects are stored and copied “by reference” so don't compare them directly
+        if (
+          product1 === product2
+        ) {
+          return true;
+
+        } else {
+          return false;
+        }
+
+      }
+
+      console.log(isSameProduct(productA, productB)); // true
+      console.log(isSameObject(productA, productC)); // false
+
+    </script>
+  </body>
+</html>

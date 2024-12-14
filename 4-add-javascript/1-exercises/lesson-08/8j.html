@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 8j</title>
+  </head>
+  <body>
+    <p>Coin Flip game (simple version)</p>
+
+    <button onclick="
+      playGame('heads');
+      ">heads</button>
+
+    <button onclick="
+      playGame('tails');
+    ">tails</button>
+
+    <script>
+      const score = {
+        wins: 0,
+        losses: 0
+      }
+      
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        if (guess === result) {
+          score.wins++;
+          alert(`You win!\nWins: ${score.wins} Losses: ${score.losses}`);
+          
+        } else {
+          score.losses++;
+          alert(`You lose!'\nWins: ${score.wins} Losses: ${score.losses}`);
+        } 
+      }
+    
+    </script>
+  </body>
+</html>

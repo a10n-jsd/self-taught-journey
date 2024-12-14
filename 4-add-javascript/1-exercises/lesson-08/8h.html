@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 8h</title>
+  </head>
+  <body>
+
+      <p>Ancient Calculator</p>
+
+      <!-- Line one -->
+      <p>
+        <button onclick="
+          updateCalculation('1');
+        ">1</button>
+        
+        <button onclick="
+          updateCalculation('2');
+        ">2</button>
+        
+        <button onclick="
+          updateCalculation('3');
+        ">3</button>
+        
+        <button onclick="
+          updateCalculation(' + ');
+        ">+</button>
+      </p>
+      
+      <!-- Line two -->
+      <p>
+        <button onclick="
+          updateCalculation('4');
+        ">4</button>
+        
+        <button onclick="
+          updateCalculation('5');
+        ">5</button>
+        
+        <button onclick="
+          updateCalculation('6');
+        ">6</button>
+        
+        <button onclick="
+          updateCalculation(' - ');
+        ">-</button>
+      </p>
+
+      <!-- Line three -->
+      <p>
+        <button onclick="
+          updateCalculation('7');
+        ">7</button>
+        
+        <button onclick="
+          updateCalculation('8');
+        ">8</button>
+        
+        <button onclick="
+          updateCalculation('9');
+        ">9</button>
+        
+        <button onclick="
+          updateCalculation(' * ');
+        ">*</button>
+      </p>
+
+      <!-- Line four -->
+      <p>
+        <button onclick="
+          updateCalculation('0');
+        ">0</button>
+        
+        <button onclick="
+          updateCalculation('.');
+        ">.</button>
+
+        <button onclick="
+          updateCalculation('=');
+        ">=</button>
+        
+        <button onclick="
+          updateCalculation(' / ');
+        ">/</button>        
+      </p>
+
+      <button onclick="
+        updateCalculation('clear');
+      ">Clear</button>
+
+    <script>
+      // When the page first loads, get the calculation using .getItem() and use a default value if a calculation doesn't exist in local storage
+      
+      let calculation = localStorage.getItem('calculation') || '';
+
+      console.log(`Last calculation: ${calculation}`);
+
+      function updateCalculation(key) {
+
+        if (key === 'clear') {
+          calculation = '';
+          localStorage.removeItem('calculation');
+          console.log('Cleared');
+        
+        } else if (key === '=') {
+          calculation = eval(calculation);
+          console.log(calculation);
+
+          // Whenever we update the calculation, save it using .setItem()
+          localStorage.setItem('calculation', calculation);
+
+        } else {
+          calculation += `${key}`;
+          console.log(calculation);
+        }
+        
+      }
+    </script>
+  </body>
+</html>
