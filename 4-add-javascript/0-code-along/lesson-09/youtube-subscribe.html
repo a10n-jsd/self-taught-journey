@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM: Youtube Subscribe</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <!-- 
+      Reference: https://supersimple.dev/projects/dom/
+     -->
+     
+    <button class="js-subscribe-button" onclick="
+      subscribe();
+    ">Subscribe</button>
+
+    <script>
+      
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerHTML === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+    </script>
+
+  </body>
+</html>

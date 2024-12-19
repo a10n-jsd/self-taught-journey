@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 9h</title>
+  </head>
+  <body>
+    <input 
+      placeholder="Type something"
+      class="js-input-typing"
+      onkeyup="
+        const inputElement = document.querySelector('.js-input-typing');
+
+        document.querySelector('.js-input-text').innerHTML = inputElement.value;
+      "
+    >
+
+    <p class="js-input-text"></p>
+    
+  </body>
+</html>

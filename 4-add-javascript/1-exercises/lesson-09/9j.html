@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 9j</title>
+  </head>
+  <body>
+
+      <p>Ancient Calculator</p>
+
+      <p class="js-calc-display"></p>
+
+      <!-- Line one -->
+      <p>
+        <button onclick="updateCalculation('1')">1</button>
+        <button onclick="updateCalculation('2')">2</button>
+        <button onclick="updateCalculation('3')">3</button>
+        <button onclick="updateCalculation(' + ')">+</button>
+      </p>
+      
+      <!-- Line two -->
+      <p>
+        <button onclick="updateCalculation('4')">4</button>
+        <button onclick="updateCalculation('5')">5</button>
+        <button onclick="updateCalculation('6')">6</button>
+        <button onclick="updateCalculation(' - ')">-</button>
+      </p>
+
+      <!-- Line three -->
+      <p>
+        <button onclick="updateCalculation('7')">7</button>
+        <button onclick="updateCalculation('8')">8</button>
+        <button onclick="updateCalculation('9')">9</button>
+        <button onclick="updateCalculation(' * ')">*</button>
+      </p>
+
+      <!-- Line four -->
+      <p>
+        <button onclick="updateCalculation('0')">0</button>
+        <button onclick="updateCalculation('.')">.</button>
+        <button onclick="updateCalculation('=')">=</button>
+        <button onclick="updateCalculation(' / ')">/</button>
+        <button onclick="resetCalculation()">Clear</button>        
+      </p>
+      
+      <button class="js-calc-history">History</button>
+
+      <button onclick="deleteCalculation()">Del</button>
+
+
+      <script>
+      let calculation = '';
+
+      // When the page first loads, get the history of calculation using .getItem() and use a default value if the history doesn't exist in local storage
+      let history = localStorage.getItem('history') || '-';
+      
+      getLastCalculation();
+
+      const displayParagraphElem = document.querySelector('.js-calc-display');
+      
+      function updateCalculation(key) {
+        
+        if (key === '=') {
+          // Avoid using eval() in real world projects since
+          calculation = eval(calculation);
+          displayParagraphElem.innerHTML = calculation;
+          
+          // Save result of calculation in history and localStorage since we need to start new calculation after press '='
+          history = calculation;
+          localStorage.setItem('history', history)
+          calculation = '';
+
+          // whenever the '=' key pressed, we want to directly get the last calculation
+          getLastCalculation();
+          return;
+        }
+
+          calculation += `${key}`;
+          displayParagraphElem.innerHTML = calculation;
+      }
+
+      function getLastCalculation() {
+        document.querySelector('.js-calc-history')
+          .innerHTML = `Last calculation: ${history}`
+      }
+
+      function resetCalculation() {
+        calculation = '';
+        displayParagraphElem.innerHTML = 'Cleared';
+      }
+      
+      function deleteCalculation() {
+        history = '-';
+        localStorage.setItem('history', history);
+        getLastCalculation();
+      }
+    </script>
+  </body>
+</html>

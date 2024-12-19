@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercise: 9i</title>
+</head>
+<body>
+
+  <button onclick="
+      showQuantity();
+    ">Show Quantity</button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+      resetCart();
+    ">Reset Cart</button>
+    
+    <p>Output:</p>
+    <p class="js-cart-quantity"></p>
+  
+  <script>
+    const paragraphElem = document.querySelector('.js-cart-quantity');
+    
+    let cartQuantity = 0;
+
+    showQuantity();
+
+    function updateCartQuantity(value) {
+        if (cartQuantity + value > 10) {
+          alert('The cart is full!');
+          // This is called an early return.
+          // An early return make our code cleaner because we can remove the 'else-if' / 'else'.
+          return; 
+        } 
+        
+        if (cartQuantity + value < 0) {
+          alert('Not enough items in the cart'); 
+          return;
+        }
+
+        cartQuantity += value;
+        showQuantity();
+      } 
+
+    function showQuantity() {
+      paragraphElem.innerHTML = `Cart quantity: ${cartQuantity}`;
+    }
+
+    function resetCart() {
+      cartQuantity = 0;
+      alert('Cart will be reset!');
+      showQuantity();
+    }
+  </script>
+</body>
+</html>
