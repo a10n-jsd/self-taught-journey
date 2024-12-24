@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 10h</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <p>Amazon Shipping Calculator</p>
+
+     <p>Orders under $40 = +$10 shipping</p>
+     <p>Orders over $40 = FREE shipping</p>
+ 
+     <input 
+       type="number" 
+       placeholder="Cost of order"
+       title="include only the first two digits after the decimal point"
+       class="js-input input__cost"
+       onkeydown="
+         handleCostKeydown(event);
+       ">
+ 
+     <button class="js-calculate btn__calc" onclick="
+       calculateCost();
+     ">Calculate</button>
+ 
+     <p class="js-cost"></p>
+     <!-- Create new element to display error message -->
+     <p class="js-error js-error-message"></p>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

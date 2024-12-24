@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reference: https://supersimple.dev/projects/calculator-final */
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 19%;
+  border: 1px solid #000;
+  margin: 0 auto;
+  padding: 5em 0;
+}
+
+.row {
+  display: flex;
+  gap: .7rem;
+  margin-top: .7rem;
+}
+
+.row--to-left {
+  justify-content: end;
+  border: 1px solid blue;
+}
+
+.display-calculator {
+  font-size: 2.8125rem;
+  margin: 0;
+}
+
+.btn-calculator {
+  font-size: 1.625rem;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  height: 60px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+}
+
+.btn-calculator--orange {
+  background-color: rgb(254, 160, 10);
+}
+
+.btn-calculator--smaller {
+  font-size: 1rem;
+}

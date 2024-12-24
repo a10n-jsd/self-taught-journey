@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 10i</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+      <div class="container">
+
+        <div class="row row--to-left">
+          <p class="js-calc-display display-calculator">0</p>
+        </div>
+        
+        <div class="row">
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('1')"
+          >1</button>
+          
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('2')"
+            >2</button>
+          
+          <button 
+            class="btn-calculator"
+            onclick="updateCalculation('3')"
+            >3</button>
+          
+          <button 
+            class="btn-calculator btn-calculator--orange" onclick="updateCalculation(' + ')"
+          >+</button>
+        </div>
+
+        <div class="row">
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('4')"
+          >4</button>
+          
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('5')"
+            >5</button>
+          
+          <button 
+            class="btn-calculator"
+            onclick="updateCalculation('6')"
+            >6</button>
+          
+          <button 
+            class="btn-calculator btn-calculator--orange" onclick="updateCalculation(' - ')"
+          >-</button>
+        </div>
+        
+        <div class="row">
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('7')"
+          >7</button>
+          
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('8')"
+            >8</button>
+          
+          <button 
+            class="btn-calculator"
+            onclick="updateCalculation('9')"
+            >9</button>
+          
+          <button 
+            class="btn-calculator btn-calculator--orange" onclick="updateCalculation(' * ')"
+          >*</button>
+        </div>
+        
+        <div class="row">
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('0')"
+          >0</button>
+          
+          <button 
+            class="btn-calculator" 
+            onclick="updateCalculation('.')"
+            >.</button>
+          
+          <button 
+            class="btn-calculator"
+            onclick="updateCalculation('=')"
+            >=</button>
+          
+          <button 
+            class="btn-calculator btn-calculator--orange" onclick="updateCalculation(' / ')"
+          >/</button>
+        </div>
+
+        <div class="row">
+          <button 
+          class="btn-calculator"
+          onclick="getLastCalculation()";
+          >M</button>
+
+          <button 
+            class="btn-calculator btn-calculator--smaller"
+            onclick="clearAll()"
+          >CA</button>
+          
+          <button 
+            class="btn-calculator btn-calculator--smaller"
+            onclick="clearEntry()"
+          >CE</button>
+          
+        </div>
+
+      <script src="script.js"></script>
+  </body>
+</html>
