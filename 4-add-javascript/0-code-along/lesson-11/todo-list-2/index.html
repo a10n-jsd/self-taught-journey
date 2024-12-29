@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list Practice 2</title>
+  </head>
+  <body>
+    <p>To do list Practice 2</p>
+    <!-- Reference: https://supersimple.dev/projects/arrays/ -->
+
+    <input 
+      placeholder="Todo name" class="js-todo-input"
+      onkeydown="handleTodoKeydown(event)" 
+    >
+
+    <button onclick="
+      addTodo();"
+    >Add</button>
+
+    <div class="js-todo-list"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

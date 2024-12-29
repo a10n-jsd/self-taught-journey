@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11m</title>
+  </head>
+  <body>
+    
+    <script>
+      function minMax(nums) {
+
+        const result = {
+          min: null,
+          max: null
+        }
+        
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          // nums[i] from an empty array return undefined, while comparison with undefined always false.
+          // See: https://javascript.info/comparison#an-incomparable-undefined
+          // We want to set as a default value : null if nums is an empty array. Hint: || operator find the first truthy value or last operand if all were falsy
+          // See: https://javascript.info/logical-operators#or-finds-the-first-truthy-value
+
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          if (result.max === null || value < result.min) {
+            result.max = value;
+          }
+
+        }
+        
+        return result;
+      }
+
+      console.log(minMax([1,-3,5]));
+      console.log(minMax([-2,3,-5,7,10]));
+      console.log(minMax([]));
+      console.log(minMax([3]));
+
+    </script>
+  </body>
+</html>
