@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11u</title>
+  </head>
+  <body>
+    <script>
+      const groceries = ['aubergine', 'apple', 'egg', 'egg', 'banana']; 
+      
+      function removeEgg(foods) {
+        
+        console.log('foods before: ' + foods);
+
+        const reversedFoods = foods.slice().reverse();
+        // Since foods.slice() results in an array, we
+        // can also use .reverse() directly like this:
+        // foods.slice().reverse();
+        
+        // This technique is called "method chaining"
+        // because we use one method after another
+        // (like a chain of methods).
+
+        console.log('reversedFoods: ' + reversedFoods);
+        console.log('foods after: ' + foods);
+        
+        const trolley = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < reversedFoods.length; i++) {
+          
+          if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+            
+            eggsRemoved++;
+            continue;
+          }
+          
+          trolley.push(reversedFoods[i]);
+        }
+        
+        return trolley.reverse();
+      }
+      
+      console.log(removeEgg(groceries)); 
+    </script>
+  </body>
+</html>

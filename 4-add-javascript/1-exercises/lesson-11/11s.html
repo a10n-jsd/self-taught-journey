@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11s</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        const trolley = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < foods.length; i++) {
+
+          if (foods[i] === 'egg' && eggsRemoved < 2) {
+            
+            eggsRemoved++;
+            continue;
+          }
+
+          trolley.push(foods[i]);
+        }
+
+        return trolley;
+
+      }
+
+      console.log(removeEgg(['egg', 'egg', 'apple', 'egg', 'banana']));
+    </script>
+  </body>
+</html>

@@ -84,20 +84,27 @@
       console.log(numsDoubled);
       */
 
+      // TOPIC: Array, like object, is reference. 
+      // The value is stored somewhere in computer memory
+
       // const array1 = [1, 2, 3];
+      // To make a copy, use slice() method
       // const array2 = array1.slice();
       // array2.push(4);
-      // console.log(array1);
-      // console.log(array2);
+      // console.log(array1); // [1,2,3]
+      // console.log(array2); // [1,2,3,4]
 
       // const [firstValue, secondValue] = [1, 2, 3];
 
+      // TOPIC: BREAK and CONTINUE
       // for (let i = 1; i <= 10; i++) {
       //   if (i % 3 === 0) {
+      //     // continue means: skip iteration
       //     continue;
       //   }
       //   console.log(i);
       //   if (i === 8) {
+      //     // break means: exit loops earlier
       //     break;
       //   }
       // }
@@ -106,6 +113,8 @@
 
       // while (i <= 10) {
       //   if (i % 3 === 0) {
+      //    // We have to increment manually if using 'continue' in a while loop
+            // make sure put it before continue statement.
       //     i++;
       //     continue;
       //   }
@@ -113,12 +122,14 @@
       //   i++;
       // }
 
+      // TOPIC: loops inside a function
       // function doubleArray(nums) {
       //   const numsDoubled = [];
 
       //   for (let i = 0; i < nums.length; i++) {
       //     const num = nums[i];
       //     if (num === 0) {
+      //       // return is another way to breaking out a loop
       //       return numsDoubled;
       //     }
       //     numsDoubled.push(num * 2);

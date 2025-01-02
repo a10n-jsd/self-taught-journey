@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11o</title>
+  </head>
+  <body>
+    
+    <script>
+      
+      function countString(array) {
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+  
+          if (word === 'search') {
+            return i;
+          } 
+        }
+        
+        // return '-1'; // Typically, the convention is to return -1 (integer) to indicate that the word is not found, not as a string.
+        
+        return -1;
+      }
+
+      console.log(countString(['hello', 'word', 'search', 'good'])); // 2
+      console.log(countString(['not', 'found'])); // -1
+    </script>
+  </body>
+</html>

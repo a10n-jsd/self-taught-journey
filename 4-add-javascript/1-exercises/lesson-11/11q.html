@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11q</title>
+  </head>
+  <body>
+    <script>
+      function findIndex(array, word) {
+
+        for (let i = 0; i < array.length; i++) {
+          const item = array[i];
+
+          if (item === word) {
+            return i;
+            // No need for break here, as return exits the function
+            // break;
+          }
+        }
+
+        return -1;
+      }
+
+      console.log(findIndex(['green', 'red', 'blue'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue'], 'yellow'));
+    </script>
+  </body>
+</html>

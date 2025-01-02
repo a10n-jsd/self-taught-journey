@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 11w</title>
+  </head>
+  <body>
+    
+    <script>
+
+      /*
+        A standard interview question that came up several times during the engineering journey is the classic "remove duplicates from an array" problem.
+      */
+     
+      function findIndex(array, word) {
+
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] === word) {
+            return i;
+          }
+        }
+
+        return -1;
+      }
+
+      /*
+        One solution is to have one input array and one output array. 
+        The basic algorithm consists of:
+        + Looping through the input array (i.e. array).
+        + For every element in the input array, check to see if the word is found in the output array (result).
+        + If the word is not found (-1) in the result array, add it to the result array.
+        + Once complete, return result.
+      */
+
+
+      
+      function unique(array) {
+        const result = [];
+        
+        for (let i = 0; i < array.length; i++ ) {
+          const word = array[i];
+
+          if (findIndex(result, word) === -1) {
+            console.log(`iteration: ${i} - result: [${result}]`);
+            console.log(`iteration: ${i} - word: ${word}`);
+            result.push(word);
+          }
+        }
+
+        return result;
+      }
+
+      console.log(unique(['green', 'red', 'blue', 'red']))
+      console.log('===========================');
+      console.log(unique(['red', 'green', 'green', 'red']));
+    </script>
+  </body>
+</html>
