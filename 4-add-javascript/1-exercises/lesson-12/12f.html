@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12f</title>
+  </head>
+  <body>
+    <button onclick="
+      addToCart(); 
+    ">Add to cart</button>
+    
+    <p class="js-message"></p>
+    
+    <script>
+      let timeoutID;
+
+      function addToCart() {
+        const paragraphElement = document.querySelector('.js-message');
+        paragraphElement.innerHTML = 'Added';
+        
+        // First, cancel the previous timeout so that
+        // it doesn't remove the message too quickly.
+        clearInterval(timeoutID);
+
+        // When we click the button again,
+        // It will 'refresh' or start setTimeout() again
+        timeoutID = setTimeout(function() {
+          paragraphElement.innerHTML = '';
+        }, 2000);
+
+      }
+      
+      
+
+    </script>
+  </body>
+</html>

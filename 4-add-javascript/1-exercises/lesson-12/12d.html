@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12d</title>
+  </head>
+  <body>
+
+    <button class="js-start-button" onclick="
+      updateButton();   
+    ">Start</button>
+    
+    <script>
+      // Grouping the JavaScript code into a function
+      // is optional, but it is a bit cleaner
+      
+      function updateButton() {
+        const startButtonElement = document.querySelector('.js-start-button');
+        
+        startButtonElement.innerHTML = 'Loading...';
+
+        setTimeout(function() {
+          startButtonElement
+            .innerHTML = 'Finished!';
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

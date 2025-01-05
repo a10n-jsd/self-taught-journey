@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Function</title>
+  </head>
+  <body>
+    
+    <script>
+    /*
+      greeting(); // hoisting: call the function before create it.
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      const num = 2;
+      const function1 = function() { // function as a value. We can omit the name (Anonymous function)
+        console.log('hello2');
+      };
+
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function() { // anonymous function
+          console.log('hello3');
+        }
+      };
+      object1.fun(); // Method: function as an object
+
+      function display(param) {
+        console.log(param);
+      }
+      display(2);
+
+      // TOPIC: Passing function as a parameter. Callback. 
+      function run(param) {
+        param();
+      }
+      run(function() {
+        console.log('hello4');
+      });
+    */
+
+    /*
+    // TOPIC: Callback and Asynchronous code
+      setTimeout(function() {
+        console.log('timeout');
+        console.log('timeout2');
+      }, 3000);
+
+      // Asynchronous mean: won't wait for a line to finish before going to the next line
+      console.log('next line');
+
+      setInterval(function() {
+        console.log('interval');
+      }, 3000);
+
+      console.log('next line 2');
+    */
+
+    // TOPIC: Another way to loop through an array
+    // forEach() is easier to read than regular loop
+  
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value, index) {
+      
+      console.log(index);
+      console.log(value);
+    });
+  
+    
+    // forEach() doesn't have 'continue' but we can still do the same in another way with 'return' statement
+    // Unfortunately, is not easy forEach() to breaking the loop. It's better to use a regular loop if we want to exit the loop earlier
+    
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value, index) {
+      if (value === 'wash dishes') {
+        return;
+      }
+      
+      console.log(index);
+      console.log(value);
+    });
+    </script>
+  </body>
+</html>
