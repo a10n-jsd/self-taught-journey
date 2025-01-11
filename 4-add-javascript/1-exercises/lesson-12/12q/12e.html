@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12e (revisited)</title>
+  </head>
+  <body>
+    <button class="js-add-button">Add to cart</button>
+    
+    <p class="js-message"></p>
+    
+    <script>
+      const buttonElement = document.querySelector('.js-add-button');
+
+      buttonElement.addEventListener('click', () => {
+        addToCart();
+      })
+
+      
+      function addToCart() {
+        const paragraphElement = document.querySelector('.js-message');
+        
+        paragraphElement.innerHTML = 'Added';
+
+        setTimeout(() => {
+          paragraphElement.innerHTML = '';
+        },2000)
+      }
+
+    </script>
+  </body>
+</html>

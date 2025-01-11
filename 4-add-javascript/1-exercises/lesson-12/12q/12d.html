@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12d (revisited)</title>
+  </head>
+  <body>
+
+    <button class="js-start-button">Start</button>
+    
+    <script>
+      // Grouping the JavaScript code into a function
+      // is optional, but it is a bit cleaner
+
+      const startButtonElement = document.querySelector('.js-start-button');
+
+      startButtonElement.addEventListener('click', () => {
+        updateButton();
+      })
+      
+      function updateButton() {
+        startButtonElement.innerHTML = 'Loading...';
+
+        setTimeout(() => {
+          startButtonElement
+            .innerHTML = 'Finished!';
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12i (revisited)</title>
+  </head>
+  <body>
+    <button onclick="
+      numOfMessage++;
+      displayNotification(); 
+    ">Add</button>
+
+    <button onclick="
+      if (numOfMessage > 0) {
+        numOfMessage--;
+      }
+
+      // If there are no new message, stop displaying
+      // the notification in the tab
+      if (numOfMessage === 0) {
+        stopNotification();
+      }
+    ">Remove</button>
+    
+    <script>
+      let numOfMessage = 2;
+      let intervalID;
+      let isDisplayingNotification = false;
+
+      // Start displaying the notification in the tab
+      // when the page first loads.
+      displayNotification();
+
+      function displayNotification() {
+
+        if (!isDisplayingNotification) {
+          intervalID = setInterval(() => {
+
+            if (document.title === 'App') {
+              document.title = `(${numOfMessage}) New message`;  
+            } else {
+              document.title = 'App';
+            }
+          }, 1000);
+        }
+
+        isDisplayingNotification = true;
+      }
+
+      function stopNotification() {
+        clearInterval(intervalID);
+        document.title = 'App';
+        
+        isDisplayingNotification = false;
+      }
+      
+    </script>
+  </body>
+</html>

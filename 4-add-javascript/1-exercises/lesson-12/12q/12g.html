@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12g (revisited)</title>
+  </head>
+  <body>
+    <button class="js-add-button">Add</button>
+
+    <button class="js-remove-button">Remove</button>
+    
+    <script>
+      let numOfMessage = 2;
+      
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          numOfMessage++;
+      });
+
+      document.querySelector('.js-remove-button')
+        .addEventListener('click', () => {
+          numOfMessage--;
+      })
+
+      setInterval(() => {
+        const title = document.title;
+        if (title === 'App') {
+          document.title = `(${numOfMessage}) New message`;
+
+        }else {
+          document.title = 'App';
+        }
+      }, 1000);
+
+
+      
+    </script>
+  </body>
+</html>

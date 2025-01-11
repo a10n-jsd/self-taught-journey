@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 12n</title>
+  </head>
+  <body>
+    
+    <script>
+      function removeEgg(foods) {
+        return foods.filter((food) => {
+          /*
+          if (food !== 'egg') {
+            return true;
+          } else {
+            return false;
+          }
+          */
+          return food !== 'egg';
+        }
+      )}
+
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'beef']));
+
+    </script>
+  </body>
+</html>
+
