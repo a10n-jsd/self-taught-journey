@@ -297,14 +297,35 @@ Working on real-life projects, will develop a more comprehensive understanding o
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Add interactivity with JavaScript
+Learn how to program the behavior of web pages.
+
+[Lesson](https://www.youtube.com/watch?v=EerdGm-ehJQ)|Description
+:---|:---
+1 - JavaScript Basics|// JavaScript is giving instructions to a computer; Wrote JavaScript code; Run our code using the Console; Syntax; <br> Go to file: <br> [JavaScript-basic.js](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-01/JavaScript-basic.js) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-01/readme.md)
+2 - Numbers and Math| // Numbers and Math; Order of Operations, and Brackets (...); Calculated the numbers in final project; Calculations using floats can be inaccurate; Math.round(); How to search for code on our own; <br> Go to file: <br> [numbers-and-math.js](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-02/numbers-and-math.js) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-02/readme.md)
+3 - Strings| // String = text; Use strings and numbers together; Three ways to create strings: '...' or "..." or  \` ... \` (template strings); Escape characters: \ ' and \n ; Interpolation, multi-line strings; <br> Go to file: <br> [string.js](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-03/string.js) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-03/readme.md)
+4 - HTML CSS Review, console.log| // Reviewed basics of HTML and CSS; Set up VSCode; Load JavaScript inside an HTML file; \<script>, onclick=""; Comments; console.log(); <br> Go to file: <br> [website.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-04/website.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-04/readme.md)
+5 - Variables| // Variables = a way to save values; Re-assign a variable; Created the Cart Quantity feature; Shortcuts for re-assigning a variable; Naming conventions and best practices; 3 ways to create a variable: let, const, var; <br> Go to file: <br> [cart-quantity.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-05/cart-quantity.html) [variables.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-05/variables.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-05/readme.md)
+6 - Booleans and If-Statements| // Boolean values (true, false); If-statements; Comparison Operators (>, <, >=, <=, ===, !==) and Logical Operators (&&, \| \|, !); Algorithms, and created Rock Paper Scissors; Truthy and Falsy values; Shortcuts for if-statements (ternary, guard, default); <br> Go to file: <br> [boolean.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-06/boolean.html) [rock-paper-scissor.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-06/rock-paper-scissor.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-06/readme.md)
+7 - Functions| // Functions = let us reuse code; Return = get a value out of a function; Parameters = put values into a function; Improved the code for Rock, Paper, Scissors; <br> Go to file: <br> [functions.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-07/functions.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-07/readme.md)
+8 - Objects| // Objects = group related values together; Added a score to Rock Paper Scissors; Built-in objects (JSON, localStorage); More details (null, auto-boxing, references); Shortcuts (destructuring, shorthand property, shorthand method); <br> Go to file: <br> [objects.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-08/objects.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-08/readme.md)
+9 - Document Object Model (DOM)| // Document Object Model (DOM); document.querySelector(...); .innerHTML; 3 projects using the DOM; onkeydown="..."; More details about strings + window object;  <br> Go to file: <br> [dom.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-09/dom.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-09/readme.md)
+10 - HTML, CSS, and JavaScript Together| // Reviewed CSS, and added CSS to projects; .classList(); Finished Rock Paper Scissors; Organize JavaScript and CSS code into separate files; <br> Go to file: <br> [lesson-10](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/0-code-along/lesson-10) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-10/readme.md)
+11 - Arrays and Loops| // Arrays = list of values; Loops (while loop, for loop); Accumulator Pattern; Created a Todo List project; Arrays are references, destructuring; More features of loops: break, continue, loops inside a function; <br> Go to file: <br> [arrays-and-loops.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-11/arrays-and-loops.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-11/readme.md)
+12 - Advanced Functions| // Functions are values; setTimeout(), setinterval(); .forEach(() => {}); Arrow functions, .addEventListener(); filter(), .map(); Closure; <br> Go to file: <br> [advanced-function.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-12/advanced-function.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-12/readme.md)
+
+> Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aclosed+label%3Aadd-javascript).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Initialize with git
-- [x] Write HTML/CSS
-- [x] Supercharge CSS
-- [ ] Build Things
-- [ ] Add interactivity with JavaScript
+- [v] Initialize with git
+- [v] Write HTML/CSS
+- [v] Supercharge CSS
+- [L] Build Things
+- [L] Add interactivity with JavaScript
 
 Fun Fact: There are notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aissue+is%3Aclosed).
 
