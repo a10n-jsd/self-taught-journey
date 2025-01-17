@@ -47,7 +47,7 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -55,6 +55,42 @@ products.forEach((product) => {
 })
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+document.querySelectorAll('.js-add-to-cart')
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      // console.log(button.dataset.productId); // product-name to productId
+
+      const productId = button.dataset.productId;
+      // Steps to combine cart quantities
+      // 1. Check if the product is already in the cart
+      // 2. if is in the cart, increase quantity
+      // 3. if is not, add to the cart
+      
+      let matchingItem;
+
+      // 1. Check if the product is already in the cart
+      cart.forEach((item) => {
+        if (productId === item.productId) {
+          matchingItem = item; // save it in a variable out of scope, later we can use it
+        }
+      })
+      
+      // 2. if is in the cart, increase quantity
+      if (matchingItem) {
+        matchingItem.quantity++;
+      
+      } else {
+        cart.push({
+          productId: productId,
+          quantity: 1
+        })
+      }
+
+      console.log(cart);
+    })
+})
+
 
 // Since I archive JavaScript Amazon project on Github repo,
 // Loading the image locally will increase the upload file size.
