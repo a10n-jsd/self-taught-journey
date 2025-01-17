@@ -68,28 +68,46 @@ document.querySelectorAll('.js-add-to-cart')
       // 3. if is not, add to the cart
       
       let matchingItem;
-
       // 1. Check if the product is already in the cart
       cart.forEach((item) => {
         if (productId === item.productId) {
           matchingItem = item; // save it in a variable out of scope, later we can use it
         }
+
       })
       
       // 2. if is in the cart, increase quantity
       if (matchingItem) {
         matchingItem.quantity++;
       
+      // 3. if is not, add to the cart
       } else {
         cart.push({
           productId: productId,
           quantity: 1
         })
       }
+      
+      // Steps to make the cart interactive
+      // 1. calculate the quantity
+      // 2. put the quantity on the page
+
+      // After updated the cart, we can start calculation
+      let cartQuantity = 0
+      cart.forEach((item) => {
+        cartQuantity += item.quantity;
+      });
+
+      document.querySelector('.js-cart-quantity')
+        .innerHTML = cartQuantity;
+
+      console.log(cartQuantity);
 
       console.log(cart);
     })
 })
+
+
 
 
 // Since I archive JavaScript Amazon project on Github repo,
