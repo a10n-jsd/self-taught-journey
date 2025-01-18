@@ -656,5 +656,15 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id-1",
+    image: "https://i.ibb.co.com/HKKw8C4/backpack.jpg",
+    name: "Black Backpack",
+    rating: {
+      stars: 4.0,
+      count: 123
+    },
+    priceCents: 2500
   }
 ];

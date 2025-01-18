@@ -26,7 +26,7 @@ products.forEach((product) => {
           </div>
 
           <div class="product-quantity-container">
-            <select>
+            <select class="js-quantity-selector-${product.id}">
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -61,7 +61,9 @@ document.querySelectorAll('.js-add-to-cart')
     button.addEventListener('click', () => {
       // console.log(button.dataset.productId); // product-name to productId
 
-      const productId = button.dataset.productId;
+      // const productId = button.dataset.productId;
+      const {productId} = button.dataset;
+
       // Steps to combine cart quantities
       // 1. Check if the product is already in the cart
       // 2. if is in the cart, increase quantity
@@ -75,16 +77,19 @@ document.querySelectorAll('.js-add-to-cart')
         }
 
       })
-      
+      const quantitySelectorElem = document.querySelector(`.js-quantity-selector-${productId}`);
+      const value = Number(quantitySelectorElem.value);
+
       // 2. if is in the cart, increase quantity
       if (matchingItem) {
-        matchingItem.quantity++;
+        matchingItem.quantity += value;
       
       // 3. if is not, add to the cart
       } else {
         cart.push({
-          productId: productId,
-          quantity: 1
+          // productId: productId,
+          productId,
+          quantity: value
         })
       }
       
@@ -101,12 +106,11 @@ document.querySelectorAll('.js-add-to-cart')
       document.querySelector('.js-cart-quantity')
         .innerHTML = cartQuantity;
 
-      console.log(cartQuantity);
+      // console.log(cartQuantity);
 
-      console.log(cart);
+      // console.log(cart);
     })
 })
-
 
 // Since I archive JavaScript Amazon project on Github repo,
 // Loading the image locally will increase the upload file size.
@@ -124,7 +128,7 @@ function pickRating(stars) {
   }
 
   if (stars === 1.5) {
-    return 'https://i.ibb.co.com/XjqYH0r/rating-15.png';
+    return 'https://i.ibb.co.com/XjqYH0r/rating-15.png'; 
   }
 
   if (stars === 2.0) {
