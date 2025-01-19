@@ -42,7 +42,7 @@ products.forEach((product) => {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-message-${product.id}">
             <img src="https://i.ibb.co.com/cNWynSQ/checkmark.png">
             Added
           </div>
@@ -55,6 +55,19 @@ products.forEach((product) => {
 })
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+// Use an object to save the timeout ids.
+// The reason is because each product
+// will have its own timeoutId. So an object can
+// save multiple timeout ids for different products.
+// For example:
+// {
+//   'product-id1': 2,
+//   'product-id2': 5,
+//   ...
+// }
+// (2 and 5 are ids that are returned when calling setTimeout).
+const timeoutIDs = {};
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
@@ -109,6 +122,31 @@ document.querySelectorAll('.js-add-to-cart')
       // console.log(cartQuantity);
 
       // console.log(cart);
+
+      const addedToCartElem = document.querySelector(`.js-added-message-${productId}`);
+      
+      addedToCartElem.classList
+        .add('added-to-cart--visible');
+      
+      const previousTimeoutId = timeoutIDs[productId];
+      if (previousTimeoutId) {
+        clearTimeout(previousTimeoutId);
+      }
+     
+      const timeoutID = setTimeout(() => {
+        addedToCartElem.classList.remove('added-to-cart--visible');
+      }, 2000)
+
+      // Save the timeoutId for this product
+      // so we can stop it later if we need to.
+      // For example:
+      // {
+      //   'product-id1': 2,
+      //   'product-id2': 5,
+      //   ...
+      // }
+      // (2 and 5 are ids that are returned when calling setTimeout).
+      timeoutIDs[productId] = timeoutID;
     })
 })
 
