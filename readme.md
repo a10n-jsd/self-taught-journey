@@ -314,8 +314,11 @@ Learn how to program the behavior of web pages.
 10 - HTML, CSS, and JavaScript Together| // Reviewed CSS, and added CSS to projects; .classList(); Finished Rock Paper Scissors; Organize JavaScript and CSS code into separate files; <br> Go to file: <br> [lesson-10](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/0-code-along/lesson-10) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-10/readme.md)
 11 - Arrays and Loops| // Arrays = list of values; Loops (while loop, for loop); Accumulator Pattern; Created a Todo List project; Arrays are references, destructuring; More features of loops: break, continue, loops inside a function; <br> Go to file: <br> [arrays-and-loops.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-11/arrays-and-loops.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-11/readme.md)
 12 - Advanced Functions| // Functions are values; setTimeout(), setinterval(); .forEach(() => {}); Arrow functions, .addEventListener(); filter(), .map(); Closure; <br> Go to file: <br> [advanced-function.html](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/0-code-along/lesson-12/advanced-function.html) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-12/readme.md)
+||Beginning of JavaScript Amazon Project
+|lesson 13 - Intro to Amazon Project & git | //  Started the final Amazon project; Intro to git; Learn the main idea of JavaScript (i. save the data, ii. generate the html, iii. make it interactive); Created list of products; Made the 'add to cart' button interactive (also added the message, use case of setTimeout() ); made the cart quantity interactive; <br> Go to file: <br> [lesson-13](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/0-code-along/lesson-13) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-13/readme.md)
 
 > Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aclosed+label%3Aadd-javascript).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
