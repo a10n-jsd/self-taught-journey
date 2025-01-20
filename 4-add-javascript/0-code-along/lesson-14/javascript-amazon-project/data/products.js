@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "https://i.ibb.co.com/0CCmcj4/athletic-cotton-socks-6-pairs.jpg",
@@ -668,3 +668,34 @@ const products = [
     priceCents: 2500
   }
 ];
+
+// Since I archive JavaScript Amazon project on Github repo,
+// Loading the image locally will increase the upload file size.
+export function pickRating(stars) {
+  const starsLink = [
+    'https://i.ibb.co.com/7zh8XJW/rating-0.png',
+    'https://i.ibb.co.com/DbmyjRf/rating-05.png',
+    'https://i.ibb.co.com/2WyNY9x/rating-10.png',
+    'https://i.ibb.co.com/XjqYH0r/rating-15.png',
+    'https://i.ibb.co.com/s6twLWf/rating-20.png',
+    'https://i.ibb.co.com/pjv1fFR/rating-25.png',
+    'https://i.ibb.co.com/3S3WXXj/rating-30.png',
+    'https://i.ibb.co.com/BjLwNzg/rating-35.png',
+    'https://i.ibb.co.com/Npj0thX/rating-40.png',
+    'https://i.ibb.co.com/5vpNBVh/rating-45.png',
+    'https://i.ibb.co.com/4FT2ZGR/rating-50.png'
+  ];
+
+  if (stars === 0) return starsLink[0];
+  if (stars === 0.5) return starsLink[1];
+  if (stars === 1.0) return starsLink[2];
+  if (stars === 1.5) return starsLink[3];
+  if (stars === 2.0) return starsLink[4];
+  if (stars === 2.5) return starsLink[5];
+  if (stars === 3.0) return starsLink[6];
+  if (stars === 3.5) return starsLink[7];
+  if (stars === 4.0) return starsLink[8];
+  if (stars === 4.5) return starsLink[9];
+  if (stars === 5.0) return starsLink[10];
+  
+}
