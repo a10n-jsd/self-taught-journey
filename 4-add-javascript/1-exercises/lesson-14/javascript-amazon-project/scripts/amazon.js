@@ -82,12 +82,12 @@ document.querySelectorAll('.js-add-to-cart')
       const {productId} = button.dataset;
 
       addToCart(productId);
-      updateCart();
+      updateCartQuantity();
       displayMessage(productId);
     })
 })
 
-function updateCart() {
+export function updateCartQuantity() {
   // Steps to make the cart interactive
   // 1. calculate the quantity
   // 2. put the quantity on the page
