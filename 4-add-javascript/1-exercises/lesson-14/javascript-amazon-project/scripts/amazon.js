@@ -1,4 +1,8 @@
-import { cart, addToCart } from "../data/cart.js";
+import { 
+  cart, 
+  addToCart, 
+  calculateCartQuantity } 
+  from "../data/cart.js";
 import { products, pickRating } from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 
@@ -87,20 +91,19 @@ document.querySelectorAll('.js-add-to-cart')
     })
 })
 
-export function updateCartQuantity() {
+function updateCartQuantity() {
   // Steps to make the cart interactive
   // 1. calculate the quantity
   // 2. put the quantity on the page
 
   // After updated the cart, we can start calculation
-  let cartQuantity = 0
-  cart.forEach((item) => {
-    cartQuantity += item.quantity;
-  });
+  const cartQuantity = calculateCartQuantity();
 
   document.querySelector('.js-cart-quantity')
     .innerHTML = cartQuantity;
 }
+
+updateCartQuantity()
 
 function displayMessage(productId) {
   const addedToCartElem = document.querySelector(`.js-added-message-${productId}`);
