@@ -1,9 +1,12 @@
 import { 
   cart, 
   addToCart, 
-  calculateCartQuantity } 
-  from "../data/cart.js";
-import { products, pickRating } from "../data/products.js";
+  calculateCartQuantity 
+} from "../data/cart.js";
+import { 
+  products, 
+  pickRating 
+} from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 
 let productsHTML = '';
