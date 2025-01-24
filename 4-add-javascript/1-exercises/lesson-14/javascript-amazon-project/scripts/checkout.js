@@ -142,11 +142,13 @@ document.querySelectorAll('.js-save-quantity-link')
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
 
-      const container = document.querySelector(`.js-cart-item-container-${productId}`);
-      container.classList.remove('is-editing-quantity');
-
       const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
       const newQuantity = Number(quantityInput.value);
+
+      if (newQuantity <= 0 || newQuantity >= 1000) {
+        alert('Quantity must be at least 1 and less than 1000 ');
+        return; // "early return to ignore rest of code below"
+      }
 
       updateQuantity(productId, newQuantity);
 
@@ -155,6 +157,13 @@ document.querySelectorAll('.js-save-quantity-link')
       quantityLabel.innerHTML = newQuantity;
 
       updateCartQuantity();
+
+      // Note: we need to move the quantity-related code up
+      // because if the new quantity is not valid, we should
+      // return early and NOT run the rest of the code
+
+      const container = document.querySelector(`.js-cart-item-container-${productId}`);
+      container.classList.remove('is-editing-quantity');
     })
 });
 
