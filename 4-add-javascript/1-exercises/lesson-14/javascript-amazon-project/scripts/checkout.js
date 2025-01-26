@@ -139,33 +139,41 @@ document.querySelectorAll('.js-update-quantity-link')
 
 document.querySelectorAll('.js-save-quantity-link')
   .forEach((link) => {
+    const productId = link.dataset.productId;
+    const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
+    
+    // Click event
     link.addEventListener('click', () => {
-      const productId = link.dataset.productId;
-
-      const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
-      const newQuantity = Number(quantityInput.value);
-
-      if (newQuantity <= 0 || newQuantity >= 1000) {
-        alert('Quantity must be at least 1 and less than 1000 ');
-        return; // "early return to ignore rest of code below"
+      // The quantityInput variable is passed as an argument to give handleUpdateQuantity function to access it
+      handleUpdateQuantity(productId, quantityInput);
+    });
+    
+    // Keydown event
+    quantityInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        handleUpdateQuantity(productId, quantityInput);
       }
-
-      updateQuantity(productId, newQuantity);
-
-      const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
-
-      quantityLabel.innerHTML = newQuantity;
-
-      updateCartQuantity();
-
-      // Note: we need to move the quantity-related code up
-      // because if the new quantity is not valid, we should
-      // return early and NOT run the rest of the code
-
-      const container = document.querySelector(`.js-cart-item-container-${productId}`);
-      container.classList.remove('is-editing-quantity');
-    })
+    });
 });
+  
+function handleUpdateQuantity(productId, quantityInput) {
+  const newQuantity = Number(quantityInput.value);
+
+  if (newQuantity <= 0 || newQuantity >= 1000) {
+    alert('Quantity must be at least 1 and less than 1000 ');
+    return; // early return
+  }
+
+  updateQuantity(productId, newQuantity);
+
+  const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
+  quantityLabel.innerHTML = newQuantity;
+
+  updateCartQuantity();
+
+  const container = document.querySelector(`.js-cart-item-container-${productId}`);
+  container.classList.remove('is-editing-quantity');
+}
 
 // notice that this function doesn’t conflict with updateCartQuantity in amazon.js because we're using modules
 function updateCartQuantity() {
