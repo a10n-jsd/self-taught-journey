@@ -87,3 +87,20 @@ export function calculateCartQuantity() {
 
   return cartQuantity;
 }
+
+// Step to update delivery option
+// 1. loop through the cart & find the product
+// 2. update the deliveryOptionId of the product
+
+export function updateDeliveryOption(productId, deliveryOptionId) {
+  let matchingItem;
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem; 
+    }
+  });
+
+  matchingItem.deliveryOptionId = deliveryOptionId;
+
+  saveToStorage();
+}
