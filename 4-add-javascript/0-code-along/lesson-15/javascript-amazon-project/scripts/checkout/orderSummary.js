@@ -5,8 +5,8 @@ import {
   updateDeliveryOption, 
   updateQuantity
 } from '../../data/cart.js';
-import { deliveryOptions } from '../../data/deliveryOptions.js';
-import { products } from '../../data/products.js';
+import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
+import { getProduct } from '../../data/products.js';
 import { formatCurrency } from '../../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 
@@ -22,26 +22,14 @@ export function renderOrderSummary() {
     
     // normalizing or de-duplicating data
     // use id from the cart and get the detail from products
-    let matchingProduct;
-
-    products.forEach((product) => {
-      if (product.id === cartItem.productId) {
-        matchingProduct = product;
-      }
-    });
-    // console.log(matchingProduct)
+    const matchingProduct = getProduct(cartItem.productId);
 
     // Step to get delivery date:
     // 1. loop through the deliveryOptions 
     // 2. matching delivery id between cart.js and deliveryOptions.js
     // 3. put on the page with right formatting
     
-    let matchingDeliveryOption;
-    deliveryOptions.forEach((option) => {
-      if (option.id === cartItem.deliveryOptionId) {
-        matchingDeliveryOption = option;
-      }
-    });
+    const matchingDeliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
 
     const today = dayjs();
     const deliveryDate = today.add(
