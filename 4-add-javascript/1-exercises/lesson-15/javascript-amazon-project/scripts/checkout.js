@@ -1,3 +1,4 @@
+import { renderCheckoutHeader } from "./checkout/checkoutHeader.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 
@@ -6,10 +7,11 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // 2. Generate html (View)
 // 3. Make it interactive (Controller)
 // Note: MVC is design pattern in software development
-
+renderCheckoutHeader();
 renderOrderSummary();
 renderPaymentSummary();
 
+/*
 // Exercises for lesson 15
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
 import { 
@@ -54,3 +56,4 @@ console.log(isSatSun(date));
 
 date = dayjs().add(6, 'days');
 console.log(isSatSun(date));
+*/

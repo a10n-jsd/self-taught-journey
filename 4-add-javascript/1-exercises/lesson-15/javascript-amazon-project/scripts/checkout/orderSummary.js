@@ -1,5 +1,4 @@
 import { 
-  calculateCartQuantity, 
   cart, 
   removeFromCart, 
   updateDeliveryOption, 
@@ -13,6 +12,7 @@ import { getProduct } from '../../data/products.js';
 import { formatCurrency } from '../../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { renderPaymentSummary } from './paymentSummary.js';
+import { renderCheckoutHeader } from './checkoutHeader.js';
 
 export function renderOrderSummary() {
   // We make this function because:
@@ -157,10 +157,9 @@ export function renderOrderSummary() {
         // let's make a function inside the cart.js
         removeFromCart(productId);
 
-        const container = document.querySelector(`.js-cart-item-container-${productId}`);
-        container.remove();
+        renderCheckoutHeader();
 
-        updateCartQuantity();
+        renderOrderSummary();
 
         renderPaymentSummary();
     })
@@ -209,18 +208,10 @@ export function renderOrderSummary() {
     const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
     quantityLabel.innerHTML = newQuantity;
 
-    updateCartQuantity();
+    renderCheckoutHeader();
+    renderPaymentSummary();
 
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
     container.classList.remove('is-editing-quantity');
   }
-
-  // notice that this function doesn’t conflict with updateCartQuantity in amazon.js because we're using modules
-  function updateCartQuantity() {
-    const cartQuantity = calculateCartQuantity();
-
-    document.querySelector('.js-return-to-home-link').innerHTML = `${cartQuantity} items`;
-  }
-
-  updateCartQuantity();
 }

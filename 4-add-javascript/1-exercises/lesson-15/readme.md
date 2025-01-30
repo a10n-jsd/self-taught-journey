@@ -35,14 +35,16 @@ We'll improve the code in the final Amazon project.
 ### Challenge Exercises
 
 We'll create the Checkout Header (at the top) using MVC.
+
 ![](https://i.ibb.co.com/PWGG0Hk/checkout.png)
 
 15j. Create a new file “checkoutHeader.js” in the “checkout” folder, create a function renderCheckoutHeader, generate the HTML, and display it on the page. Note: insert the correct cart quantity into the HTML.
 <hr>
 
-15k. After deleting a product from the cart, re-render the Checkout Header so the cart quantity is up-to-date. Note: use MVC instead of updating the page directly with the DOM. Many online stores don't deliver on the weekend (Saturday/Sunday).
+15k. After deleting a product from the cart, re-render the Checkout Header so the cart quantity is up-to-date. Note: use MVC instead of updating the page directly with the DOM. 
 <hr>
 
+Many online stores don't deliver on the weekend (Saturday/Sunday).
 We'll update our code so that delivery dates are not on a weekend.
 
 15l. In orderSummary.js, we have some code at the top that takes a deliveryOption, calculates the delivery date, and formats it. This code is repeated in deliveryOptionsHTML(). Create a function to reuse this code. (Create function calculateDeliveryDate(deliveryOption) in
