@@ -5,12 +5,12 @@ import {
   updateQuantity
 } from '../../data/cart.js';
 import { 
+  calculateDeliveryDate,
   deliveryOptions, 
   getDeliveryOption 
 } from '../../data/deliveryOptions.js';
 import { getProduct } from '../../data/products.js';
 import { formatCurrency } from '../../utils/money.js';
-import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { renderPaymentSummary } from './paymentSummary.js';
 import { renderCheckoutHeader } from './checkoutHeader.js';
 
@@ -33,14 +33,9 @@ export function renderOrderSummary() {
     // 2. matching delivery id between cart.js and deliveryOptions.js
     // 3. put on the page with right formatting
     
-    const matchingDeliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
+    const deliveryOption = getDeliveryOption(cartItem.deliveryOptionId);
 
-    const today = dayjs();
-    const deliveryDate = today.add(
-      matchingDeliveryOption.deliveryDays,
-      'days'
-    );
-    const dateString = deliveryDate.format('dddd, MMMM D');
+    const dateString = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML += 
     `
@@ -97,12 +92,8 @@ export function renderOrderSummary() {
     let deliveryOptionHTML = '';
 
     deliveryOptions.forEach((deliveryOption) => {
-      const today = dayjs();
-      const deliveryDate = today.add(
-        deliveryOption.deliveryDays,
-        'days'
-      );
-      const dateString = deliveryDate.format('dddd, MMMM D');
+      const dateString = calculateDeliveryDate(deliveryOption);
+      
       const priceString = deliveryOption.priceCents === 0 ? 'Free' : `$${formatCurrency(deliveryOption.priceCents)} -`;
 
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId 
@@ -204,14 +195,20 @@ export function renderOrderSummary() {
     }
 
     updateQuantity(productId, newQuantity);
-
-    const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
-    quantityLabel.innerHTML = newQuantity;
-
-    renderCheckoutHeader();
-    renderPaymentSummary();
-
+    
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
     container.classList.remove('is-editing-quantity');
+
+    renderCheckoutHeader();
+    renderOrderSummary();
+    renderPaymentSummary();
+
+    // We can delete the code below
+    // because instead of using the DOM to update the page directly
+    // we can use MVC and re-render everything. This will make sure
+    // the page always matches the data.
+    
+    // const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
+    // quantityLabel.innerHTML = newQuantity;
   }
 }
