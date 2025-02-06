@@ -7,7 +7,7 @@ import {
   products, 
   pickRating 
 } from "../data/products.js";
-import { formatCurrency } from "../utils/money.js";
+import { formatCurrency } from "../scripts/utils/money.js";
 
 let productsHTML = '';
 

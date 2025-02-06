@@ -1,17 +1,23 @@
-export let cart = JSON.parse(localStorage.getItem('cart')) || [
-  // set initial item to development only
-  {
-    productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-    quantity: 2,
-    deliveryOptionId: '1'
-    
-  },
-  {
-    productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-    quantity: 1,
-    deliveryOptionId: '2'
-  }
-];
+export let cart; 
+
+loadFromStorage();
+
+export function loadFromStorage() {
+  cart = JSON.parse(localStorage.getItem('cart')) || [
+    // set initial item to development only
+    {
+      productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+      quantity: 2,
+      deliveryOptionId: '1'
+      
+    },
+    {
+      productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+      quantity: 1,
+      deliveryOptionId: '2'
+    }
+  ];
+}
 
 export function addToCart(productId) {
   // Steps to combine cart quantities
@@ -27,19 +33,25 @@ export function addToCart(productId) {
         }
 
       })
+      // For compatibility with Lesson 16, this section must be skipped.
+      // Need to be revisited after the course
+      /*
       const quantitySelectorElem = document.querySelector(`.js-quantity-selector-${productId}`);
       const value = Number(quantitySelectorElem.value);
+      */
 
       // 2. if is in the cart, increase quantity
       if (matchingItem) {
-        matchingItem.quantity += value;
+        // matchingItem.quantity += value;
+        matchingItem.quantity += 1; // *lesson 16
       
       // 3. if is not, add to the cart
       } else {
         cart.push({
           // productId: productId,
           productId,
-          quantity: value,
+          // quantity: value,
+          quantity: 1, // *lesson 16
           deliveryOptionId: '1' // set default value
         })
       }
