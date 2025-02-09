@@ -6,11 +6,11 @@
 
 16b. Add another test case for formatCurrency() and test with a negative number (you decide which number to use). Re-run the tests after. 
 
+<hr>
+
 `expect()` has another method we can use: ` toHaveBeenCalledWith()` This checks what values a mocked method received. For example:
 `expect(localStorage.setItem).toHaveBeenCalledWith('cart', '[]')`
 Checks if the code called `localStorage.setItem('cart', '[]')` at some point.
-
-<hr>
 
 16c. In cartTest.js, in the first test, add an `expect(localStorage.setItem)` and check if setItem received the correct values. The first value should be `'cart'` and the second value should be the cart array that was saved (convert the cart array into a string using JSON.stringify since localStorage only supports saving strings).
 
@@ -36,7 +36,7 @@ Checks if the code called `localStorage.setItem('cart', '[]')` at some point.
 
 <hr>
 
-####Challenge Exercises
+#### Challenge Exercises
 
 16i. In cartTest.js, create a test suite for the removeFromCart() function.
 + Mock `localStorage.setItem` and `localStorage.getItem` at the start.
