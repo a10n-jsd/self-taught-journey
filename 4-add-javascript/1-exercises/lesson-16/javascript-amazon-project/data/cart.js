@@ -112,6 +112,9 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     }
   });
 
+  if (!matchingItem) return;
+  // use an early exit (return) can improve readability by reducing nesting and making it clear that subsequent code relies on matchingItem being truthy.
+
   matchingItem.deliveryOptionId = deliveryOptionId;
 
   saveToStorage();
