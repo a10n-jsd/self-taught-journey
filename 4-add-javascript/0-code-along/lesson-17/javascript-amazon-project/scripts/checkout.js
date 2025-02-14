@@ -1,7 +1,8 @@
 import { renderCheckoutHeader } from "./checkout/checkoutHeader.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import '../data/cart-oop.js';
+// import '../data/cart-oop.js';
+import '../data/cart-class.js';
 
 // Main idea of JavaScript:
 // 1. Save the data (Model)
