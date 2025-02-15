@@ -1,3 +1,5 @@
+import { formatCurrency } from "../scripts/utils/money.js";
+
 export function getProduct(productId) {
   let matchingProduct;
 
@@ -8,6 +10,29 @@ export function getProduct(productId) {
     });
 
   return matchingProduct;
+}
+class Products {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
+
+  constructor(productDetails) {
+    this.id = productDetails.id;
+    this.image = productDetails.image;
+    this.name = productDetails.name;
+    this.rating = productDetails.rating;
+    this.priceCents = productDetails.priceCents;
+  }
+
+  getStarsUrl() {
+    return `${pickRating(this.rating.stars)}`
+  }
+
+  getPrice() {
+    return `${formatCurrency(this.priceCents)}`
+  }
 }
 
 export const products = [
@@ -679,11 +704,25 @@ export const products = [
     },
     priceCents: 2500
   }
-];
+].map((productDetails) => {
+  return new Products(productDetails);
+});
+
+// .map() return new array, how does the code above works?
+/*
+  [                               [
+    product1,   --> function -->    new Product(product1),
+    product2,   --> function -->    new Product(product2),
+    product3,   --> function -->    new Product(product3),
+    ...                             ...
+  ]                               ]
+*/
+
+// console.log(products);
 
 // Since I archive JavaScript Amazon project on Github repo,
 // Loading the image locally will increase the upload file size.
-export function pickRating(stars) {
+function pickRating(stars) {
   const starsLink = [
     'https://i.ibb.co.com/7zh8XJW/rating-0.png',
     'https://i.ibb.co.com/DbmyjRf/rating-05.png',
