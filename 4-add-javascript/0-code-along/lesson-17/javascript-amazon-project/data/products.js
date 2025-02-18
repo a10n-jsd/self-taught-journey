@@ -33,7 +33,56 @@ class Products {
   getPrice() {
     return `${formatCurrency(this.priceCents)}`
   }
+
+  getExtraInfoHTML() {
+    return '';
+  }
 }
+
+class Clothing extends Products {
+  sizeChartLink;
+
+  constructor(productDetails) {
+    super(productDetails);
+    // without 'super', can't access 'this'  
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+
+  // This function demonstrate overriding parents method and polymorphism
+  getExtraInfoHTML() {
+    // If we still need to call the parents method, we can use super 
+    // super.getExtraInfoHTML();
+    return `
+    <a href="${this.sizeChartLink}" target="_blank">
+      Size Chart
+    </a>
+    `
+  }
+}
+
+/*
+// Practical child class
+const tshirt = new Clothing({
+  id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+  image: "https://i.ibb.co.com/V3msDdj/adults-plain-cotton-tshirt-2-pack-teal.jpg",
+  name: "Adults Plain Cotton T-Shirt - 2 Pack",
+  rating: {
+    stars: 4.5,
+    count: 56
+  },
+  priceCents: 799,
+  keywords: [
+    "tshirts",
+    "apparel",
+    "mens"
+  ],
+  type: "clothing",
+  sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
+});
+
+console.log(tshirt);
+console.log(tshirt.getPrice())
+*/
 
 export const products = [
   {
@@ -705,6 +754,11 @@ export const products = [
     priceCents: 2500
   }
 ].map((productDetails) => {
+  // type in products object is a discriminator property
+  if (productDetails.type === 'clothing') {
+    return new Clothing(productDetails)
+  }
+
   return new Products(productDetails);
 });
 

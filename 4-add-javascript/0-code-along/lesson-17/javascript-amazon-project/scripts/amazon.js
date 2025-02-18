@@ -47,6 +47,13 @@ products.forEach((product) => {
             </select>
           </div>
 
+          <!-- Here are the benefit of polymorphism from OOP -->
+          <!-- polymorphism = use a method without knowing the class -->
+          <!-- so, We don't need an if statement or ternary op. here -->
+          <!-- the class will determine what method is being used -->
+          <!-- Just overriding parents method -->
+          ${product.getExtraInfoHTML()}
+
           <div class="product-spacer"></div>
 
           <div class="added-to-cart js-added-message-${product.id}">
