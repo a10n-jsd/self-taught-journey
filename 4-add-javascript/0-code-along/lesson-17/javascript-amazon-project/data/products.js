@@ -84,6 +84,76 @@ console.log(tshirt);
 console.log(tshirt.getPrice())
 */
 
+/*
+// Built-in Classes
+const date = new Date();
+
+// In this project, we use dayJS not Date() because
+// it has a lot of extra features
+// example Date() method
+console.log(date.toLocaleDateString()); 
+console.log(date.toLocaleTimeString()); 
+*/
+
+// More details about 'this'
+// originally 'this' represent window,
+// after javascript modules released, inside a module, this = undefined
+/*
+console.log(this);
+
+const object2 = {
+  a: 2,
+  b: this.a // undefined because outside of a method
+};
+*/
+
+/*
+function logThis() {
+  console.log(this); 
+}
+
+logThis(); // undefined, not inside of any object
+logThis.call('Hello'); // extra features of 'this' with .call()
+*/
+
+// Arrow function do not change the value of 'this'
+/*
+this;
+
+const object3 = {
+  method: () => {
+    // 'this' will have same value as OUTSIDE the arrow function (l.121)
+    console.log(this);
+  }
+};
+
+object3.method(); // undefined
+
+const object4 = {
+  method() {
+    console.log(this);
+
+    // [1,2,3].forEach(() => {
+    //   console.log(this) // same value outside of forEach()
+    // })
+
+    [1,2,3].forEach(function() {
+      console.log(this) // a common problem while using regular function, 'this' become undefined
+    })
+  }
+};
+
+object4.method();
+*/
+
+/*
+Summary of 'this':
+1. Inside a method, “this” points to the outer object
+2. Inside a function, this = undefined But we can change it
+3. Arrow functions, do not change the value of “this"
+*/
+
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
