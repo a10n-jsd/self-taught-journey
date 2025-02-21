@@ -60,99 +60,27 @@ class Clothing extends Products {
   }
 }
 
-/*
-// Practical child class
-const tshirt = new Clothing({
-  id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
-  image: "https://i.ibb.co.com/V3msDdj/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-  name: "Adults Plain Cotton T-Shirt - 2 Pack",
-  rating: {
-    stars: 4.5,
-    count: 56
-  },
-  priceCents: 799,
-  keywords: [
-    "tshirts",
-    "apparel",
-    "mens"
-  ],
-  type: "clothing",
-  sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
-});
+class Appliance extends Products {
+  instructionsLink;
+  warrantyLink;
 
-console.log(tshirt);
-console.log(tshirt.getPrice())
-*/
+  constructor(productDetails) {
+    super(productDetails);
+    this.instructionsLink = productDetails.instructionsLink;
+    this.warrantyLink = productDetails.warrantyLink;
+  }
 
-/*
-// Built-in Classes
-const date = new Date();
-
-// In this project, we use dayJS not Date() because
-// it has a lot of extra features
-// example Date() method
-console.log(date.toLocaleDateString()); 
-console.log(date.toLocaleTimeString()); 
-*/
-
-// More details about 'this'
-// originally 'this' represent window,
-// after javascript modules released, inside a module, this = undefined
-/*
-console.log(this);
-
-const object2 = {
-  a: 2,
-  b: this.a // undefined because outside of a method
-};
-*/
-
-/*
-function logThis() {
-  console.log(this); 
+  getExtraInfoHTML() {
+    return `
+    <a href="${this.instructionsLink}" target="_blank">
+      Instructions
+    </a>
+    <a href="${this.warrantyLink}" target="_blank">
+      Warranty
+    </a>
+    `
+  }
 }
-
-logThis(); // undefined, not inside of any object
-logThis.call('Hello'); // extra features of 'this' with .call()
-*/
-
-// Arrow function do not change the value of 'this'
-/*
-this;
-
-const object3 = {
-  method: () => {
-    // 'this' will have same value as OUTSIDE the arrow function (l.121)
-    console.log(this);
-  }
-};
-
-object3.method(); // undefined
-
-const object4 = {
-  method() {
-    console.log(this);
-
-    // [1,2,3].forEach(() => {
-    //   console.log(this) // same value outside of forEach()
-    // })
-
-    [1,2,3].forEach(function() {
-      console.log(this) // a common problem while using regular function, 'this' become undefined
-    })
-  }
-};
-
-object4.method();
-*/
-
-/*
-Summary of 'this':
-1. Inside a method, “this” points to the outer object
-2. Inside a function, this = undefined But we can change it
-3. Arrow functions, do not change the value of “this"
-*/
-
 
 export const products = [
   {
@@ -193,13 +121,13 @@ export const products = [
       count: 56
     },
     priceCents: 799,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "tshirts",
       "apparel",
       "mens"
-    ],
-    type: "clothing",
-    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
+    ]
   },
   {
     id: "54e0eccd-8f36-462b-b68a-8182611d9add",
@@ -210,6 +138,9 @@ export const products = [
       count: 2197
     },
     priceCents: 1899,
+    type: "appliance",
+    instructionsLink: "https://i.ibb.co.com/X8S5R7P/appliance-instructions.png",
+    warrantyLink: "https://i.ibb.co.com/SxvBJVw/appliance-warranty.png",
     keywords: [
       "toaster",
       "kitchen",
@@ -254,6 +185,8 @@ export const products = [
       count: 317
     },
     priceCents: 2400,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "hoodies",
       "sweaters",
@@ -315,15 +248,15 @@ export const products = [
       count: 235
     },
     priceCents: 2070,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "robe",
       "swimsuit",
       "swimming",
       "bathing",
       "apparel"
-    ],
-    type: "clothing",
-    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
+    ]
   },
   {
     id: "aad29d11-ea98-41ee-9285-b916638cac4a",
@@ -380,6 +313,8 @@ export const products = [
       count: 160
     },
     priceCents: 1699,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "shorts",
       "apparel",
@@ -395,6 +330,9 @@ export const products = [
       count: 846
     },
     priceCents: 3074,
+    type: "appliance",
+    instructionsLink: "https://i.ibb.co.com/X8S5R7P/appliance-instructions.png",
+    warrantyLink: "https://i.ibb.co.com/SxvBJVw/appliance-warranty.png",
     keywords: [
       "water boiler",
       "appliances",
@@ -458,6 +396,8 @@ export const products = [
       count: 2465
     },
     priceCents: 1374,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "hooded",
       "hoodies",
@@ -465,8 +405,6 @@ export const products = [
       "women",
       "apparel"
     ],
-    type: "clothing",
-    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
   },
   {
     id: "a93a101d-79ef-4cf3-a6cf-6dbe532a1b4a",
@@ -507,15 +445,15 @@ export const products = [
       stars: 4.5,
       count: 2556
     },
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     priceCents: 1599,
     keywords: [
       "tshirts",
       "shirts",
       "apparel",
       "mens"
-    ],
-    type: "clothing",
-    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png"
+    ]
   },
   {
     id: "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
@@ -577,6 +515,8 @@ export const products = [
       count: 9017
     },
     priceCents: 2290,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "pants",
       "apparel",
@@ -654,6 +594,8 @@ export const products = [
       count: 248
     },
     priceCents: 2400,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "pants",
       "sweatpants",
@@ -700,6 +642,9 @@ export const products = [
       count: 1211
     },
     priceCents: 2250,
+    type: "appliance",
+    instructionsLink: "https://i.ibb.co.com/X8S5R7P/appliance-instructions.png",
+    warrantyLink: "https://i.ibb.co.com/SxvBJVw/appliance-warranty.png",
     keywords: [
       "coffeemakers",
       "kitchen",
@@ -760,6 +705,9 @@ export const products = [
       count: 3
     },
     priceCents: 10747,
+    type: "appliance",
+    instructionsLink: "https://i.ibb.co.com/X8S5R7P/appliance-instructions.png",
+    warrantyLink: "https://i.ibb.co.com/SxvBJVw/appliance-warranty.png",
     keywords: [
       "food blenders",
       "kitchen",
@@ -806,6 +754,8 @@ export const products = [
       count: 3157
     },
     priceCents: 2400,
+    type: "clothing",
+    sizeChartLink: "https://i.ibb.co.com/dLfrC12/clothing-size-chart.png",
     keywords: [
       "sweaters",
       "hoodies",
@@ -827,6 +777,10 @@ export const products = [
   // type in products object is a discriminator property
   if (productDetails.type === 'clothing') {
     return new Clothing(productDetails)
+  }
+
+  if (productDetails.type === 'appliance') {
+    return new Appliance(productDetails)
   }
 
   return new Products(productDetails);
