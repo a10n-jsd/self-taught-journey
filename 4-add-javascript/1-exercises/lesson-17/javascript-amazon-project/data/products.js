@@ -11,7 +11,7 @@ export function getProduct(productId) {
 
   return matchingProduct;
 }
-class Products {
+export class Products {
   id;
   image;
   name;
@@ -39,7 +39,7 @@ class Products {
   }
 }
 
-class Clothing extends Products {
+export class Clothing extends Products {
   sizeChartLink;
 
   constructor(productDetails) {
@@ -60,7 +60,7 @@ class Clothing extends Products {
   }
 }
 
-class Appliance extends Products {
+export class Appliance extends Products {
   instructionsLink;
   warrantyLink;
 
