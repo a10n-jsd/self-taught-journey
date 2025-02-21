@@ -50,7 +50,7 @@ should not be able to change the brand and model of a car!)
 
 17g. Now, try making the `speed` property private.
 + Update the rest of the code and try the code.
-+ Notice the code doesn’t work because the RaceCar class cannot access the private `#speed` property (private properties can only be accessed in the same class. They can’t be accessed in a child class).
++ Notice the speed output doesn't work because the RaceCar class cannot access the private `#speed` property (private properties can only be accessed in the same class. They can’t be accessed in a child class).
 + Therefore, we'll have to change speed back to public.
 + In other languages, a property can be `public`, `private`, Or `protected` (`protected` = it can be accessed inside a class and its child classes).
 + Object-Oriented Programming is less popular in JavaScript because it is missing some features of OOP, like `protected` properties.
