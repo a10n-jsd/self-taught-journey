@@ -3,15 +3,15 @@ import { checkDeliveryOption } from "./deliveryOptions.js";
 // use PascalCase for things that generate objects
 class Cart {
   cartItems;
-  #localStorageKey;
+  localStorageKey; // Make it public again since need to be accessed in test file.
 
   constructor(localStorageKey) {
-    this.#localStorageKey = localStorageKey;
-    this.#loadFromStorage();
+    this.localStorageKey = localStorageKey;
+    this.loadFromStorage();
   }
 
-  #loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey)) || [
+  loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey)) || [
       {
         productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
         quantity: 2,
@@ -27,7 +27,7 @@ class Cart {
   }
 
   saveToStorage() {
-    localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this.cartItems));
   }
 
   addToCart(productId) {
@@ -122,11 +122,37 @@ class Cart {
     
     this.saveToStorage();
   }
+
+  calculateCartQuantity() {
+    let cartQuantity = 0
+  
+    this.cartItems.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+  
+    return cartQuantity;
+  }
+
+  updateQuantity(productId, newQuantity) {
+    let matchingItem;
+  
+    this.cartItems.forEach((cartItem) => {
+      if (cartItem.productId === productId) {
+        matchingItem = cartItem;
+      }
+    });
+    
+    matchingItem.quantity = newQuantity;
+    
+    this.saveToStorage();
+  }
 }
 
+export const cart = new Cart('cart-oop');
+/*
 // Create multiple objects
-const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
 
 console.log(cart);
 console.log(businessCart);
+*/

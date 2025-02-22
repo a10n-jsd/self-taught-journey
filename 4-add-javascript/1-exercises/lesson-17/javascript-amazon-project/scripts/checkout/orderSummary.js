@@ -1,9 +1,4 @@
-import { 
-  cart, 
-  removeFromCart, 
-  updateDeliveryOption, 
-  updateQuantity
-} from '../../data/cart.js';
+import { cart } from '../../data/cart-class.js';
 import { 
   calculateDeliveryDate,
   deliveryOptions, 
@@ -22,7 +17,7 @@ export function renderOrderSummary() {
 
   let cartSummaryHTML = '';
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     
     // normalizing or de-duplicating data
     // use id from the cart and get the detail from products
@@ -130,7 +125,7 @@ export function renderOrderSummary() {
     .forEach((element) => {
       element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
-        updateDeliveryOption(productId, deliveryOptionId);
+        cart.updateDeliveryOption(productId, deliveryOptionId);
         renderOrderSummary();
         renderPaymentSummary();
       })
@@ -148,7 +143,7 @@ export function renderOrderSummary() {
         // 3. Add each product to new array except the productId
 
         // let's make a function inside the cart.js
-        removeFromCart(productId);
+        cart.removeFromCart(productId);
 
         renderCheckoutHeader();
 
@@ -196,7 +191,7 @@ export function renderOrderSummary() {
       return; // early return
     }
 
-    updateQuantity(productId, newQuantity);
+    cart.updateQuantity(productId, newQuantity);
     
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
     container.classList.remove('is-editing-quantity');
