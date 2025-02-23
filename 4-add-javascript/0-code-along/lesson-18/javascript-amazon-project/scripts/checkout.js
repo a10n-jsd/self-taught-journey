@@ -6,6 +6,8 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // import '../data/cart-class.js';
 // import '../data/car.js';
 
+// lesson 18:
+import '../data/backend-practice.js';
 
 // Main idea of JavaScript:
 // 1. Save the data (Model)
