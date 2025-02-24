@@ -8,7 +8,7 @@ import { loadProducts } from "../data/products.js";
 // import '../data/car.js';
 // lesson 18:
 // import '../data/backend-practice.js';
-
+import { loadCart } from "../data/products.js";
 
 // Main idea of JavaScript:
 // 1. Save the data (Model)
@@ -16,9 +16,39 @@ import { loadProducts } from "../data/products.js";
 // 3. Make it interactive (Controller)
 // Note: MVC is design pattern in software development
 
-// callback with anonymous function
-loadProducts(() => {
+
+new Promise((resolve) => {
+  // resolve() same with done() from jasmine for controlling when to go to next step
+  loadProducts(() => {
+    resolve('a product value');
+  })
+
+}).then((value) => {
+  console.log(value); // 'a value'
+
+  return new Promise((resolve) => {
+    loadCart(() => {
+      resolve('a value again');
+    })
+  })
+
+}).then((cartValue) => {
+  console.log(cartValue);
   renderCheckoutHeader();
   renderOrderSummary();
   renderPaymentSummary();
 })
+
+
+// callback with anonymous function
+// the problem with callback: a lot of nesting
+// promises: flatten the code
+/*
+loadProducts(() => {
+  loadCart(() => {
+    renderCheckoutHeader();
+    renderOrderSummary();
+    renderPaymentSummary();
+  })
+})
+*/

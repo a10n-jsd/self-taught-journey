@@ -82,6 +82,18 @@ export class Appliance extends Products {
   }
 }
 
+export function loadCart(fun) {
+  const xhr = new XMLHttpRequest();
+  
+  xhr.addEventListener('load', () => {
+    console.log(xhr.response);
+    fun();
+  });
+  
+  xhr.open('GET', 'https://supersimplebackend.dev/cart'); // response: plain text => 'load cart'
+  xhr.send();
+}
+
 export let products = [];
 
 export function loadProducts(fun) {
