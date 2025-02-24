@@ -82,6 +82,38 @@ export class Appliance extends Products {
   }
 }
 
+export let products = [];
+
+export function loadProducts(fun) {
+  const xhr = new XMLHttpRequest();
+  
+  xhr.addEventListener('load', () => {
+    products = JSON.parse(xhr.response).map((productDetails) => {
+      // type in products object is a discriminator property
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails)
+      }
+    
+      if (productDetails.type === 'appliance') {
+        return new Appliance(productDetails)
+      }
+    
+      return new Products(productDetails);
+    });;
+    
+    console.log('load products');
+
+    // callback function
+    fun();
+  });
+  
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+
+// loadProducts();
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -785,6 +817,7 @@ export const products = [
 
   return new Products(productDetails);
 });
+*/
 
 // .map() return new array, how does the code above works?
 /*
