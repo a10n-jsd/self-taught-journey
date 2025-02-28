@@ -1,7 +1,7 @@
 import { renderCheckoutHeader } from "./checkout/checkoutHeader.js";
 import { renderOrderSummary } from "./checkout/orderSummary.js";
 import { renderPaymentSummary } from "./checkout/paymentSummary.js";
-import { loadProducts } from "../data/products.js";
+import { loadProducts, loadProductsFetch } from "../data/products.js";
 // lesson 17: Object Oriented Programming
 // import '../data/cart-oop.js';
 // import '../data/cart-class.js';
@@ -17,13 +17,7 @@ import { loadCart } from "../data/products.js";
 // Note: MVC is design pattern in software development
 
 Promise.all([
-  new Promise((resolve) => {
-    // resolve() same with done() from jasmine for controlling when to go to next step
-    loadProducts(() => {
-      resolve('a product value');
-    })
-  
-  }),
+  loadProductsFetch(),
   new Promise((resolve) => {
     loadCart(() => {
       resolve('a cart value');
@@ -31,7 +25,7 @@ Promise.all([
   })
 
 ]).then((values) => {
-  console.log(values); // values[0], values[1]
+  // console.log(values); // values[0], values[1]
   renderCheckoutHeader();
   renderOrderSummary();
   renderPaymentSummary();

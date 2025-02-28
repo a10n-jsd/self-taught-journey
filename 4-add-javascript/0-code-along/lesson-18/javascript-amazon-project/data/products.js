@@ -123,6 +123,42 @@ export function loadProducts(fun) {
   xhr.send();
 }
 
+export function loadProductsFetch() {
+  // fetch() uses promises so it works with .then()
+  const promise = fetch(
+    'https://supersimplebackend.dev/products'
+    ).then((response) => {
+      // console.log(response);
+      return response.json() // is async code 
+      // when we return a promise, it will wait until finish
+       
+  }).then((productData) => {
+    // console.log(productData);
+      products = productData.map((productDetails) => {
+        // type in products object is a discriminator property
+        if (productDetails.type === 'clothing') {
+          return new Clothing(productDetails)
+        }
+      
+        if (productDetails.type === 'appliance') {
+          return new Appliance(productDetails)
+        }
+      
+        return new Products(productDetails);
+      });;
+      
+      console.log('load products');
+  })
+
+  return promise; // after return out of the function, promise can add another step with .then()
+}
+
+/*
+loadProductsFetch().then(() => {
+  console.log('next step');
+});
+*/
+
 // loadProducts();
 
 /*
