@@ -16,6 +16,41 @@ import { loadCart } from "../data/products.js";
 // 3. Make it interactive (Controller)
 // Note: MVC is design pattern in software development
 
+/*
+async function loadPage() {
+  // async is a shortcut of promise
+  // async make a function return a promise
+  console.log('load page');
+
+  // await: let wait for promises to finish but in a normal code (line by line)
+  await loadProductsFetch();
+}
+
+loadPage().then(() => {
+  console.log('next step');
+})
+*/
+
+async function loadPage() {
+  await loadProductsFetch();
+
+  // loadCart() still using callback, not a fetch()
+  // const value = await loadCartFetch();
+  await new Promise((resolve) => {
+    loadCart(() => {
+      resolve('a cart value');
+    })
+  });
+  
+  renderCheckoutHeader();
+  renderOrderSummary();
+  renderPaymentSummary();
+  
+}
+
+loadPage();
+
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
@@ -30,6 +65,7 @@ Promise.all([
   renderOrderSummary();
   renderPaymentSummary();
 });
+*/
 
 /*
 new Promise((resolve) => {
