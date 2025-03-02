@@ -118,10 +118,19 @@ export function loadProducts(fun) {
     // callback function
     fun();
   });
+
+  // error handling for callback
+  // set up a separate callback just for error
+
+  xhr.addEventListener('error', (error) => {
+    console.log('Unexpected error. Please try again later!');
+  })
   
-  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.open('GET', 'https://error.supersimplebackend.dev/products');
   xhr.send();
 }
+
+loadProducts();
 
 export function loadProductsFetch() {
   // fetch() uses promises so it works with .then()
