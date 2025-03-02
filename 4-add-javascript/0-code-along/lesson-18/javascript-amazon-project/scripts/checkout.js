@@ -34,12 +34,30 @@ loadPage().then(() => {
 async function loadPage() {
   // error handling for async-await with try-catch
   try {
+    // we can manually create an error with 'throw'
+    // and it'll skip the rest of code
+    /*
+    throw 'error' // any value accepted
+    */
+
     await loadProductsFetch();
 
     // loadCart() still using callback, not a fetch()
     // const value = await loadCartFetch();
-    await new Promise((resolve) => {
+    await new Promise((resolve, reject) => {
+      // manual error for promise with await
+      // instead go to directly with .catch, it'll go `catch (error){}`
+      // await make it like a normal code
+      /*
+      throw 'error';
+      */
       loadCart(() => {
+        // if we want to manually create error in the future
+        // use reject();
+        // throw will not work in the future
+        /*
+        reject('error');
+        */
         resolve('a cart value');
       })
     });

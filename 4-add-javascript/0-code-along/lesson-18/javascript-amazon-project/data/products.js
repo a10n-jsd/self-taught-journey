@@ -133,7 +133,7 @@ export function loadProducts(fun) {
 export function loadProductsFetch() {
   // fetch() uses promises so it works with .then()
   const promise = fetch(
-    'https://error.supersimplebackend.dev/products'
+    'https://supersimplebackend.dev/products'
     ).then((response) => {
       // console.log(response);
       return response.json() // is async code 
