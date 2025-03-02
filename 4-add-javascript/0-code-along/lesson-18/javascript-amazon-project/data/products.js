@@ -157,14 +157,12 @@ export function loadProductsFetch() {
       console.log('load products');
 
       // error handling for promises
-    }).catch((error) => {
+    })/*.catch((error) => {
         console.log('Unexpected error. Please try again later!')
-    })
+    })*/
 
   return promise; // after return out of the function, promise can add another step with .then()
 }
-
-loadProductsFetch();
 
 /*
 loadProductsFetch().then(() => {

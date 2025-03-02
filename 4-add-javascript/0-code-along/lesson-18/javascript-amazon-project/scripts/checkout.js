@@ -32,15 +32,21 @@ loadPage().then(() => {
 */
 
 async function loadPage() {
-  await loadProductsFetch();
+  // error handling for async-await with try-catch
+  try {
+    await loadProductsFetch();
 
-  // loadCart() still using callback, not a fetch()
-  // const value = await loadCartFetch();
-  await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('a cart value');
-    })
-  });
+    // loadCart() still using callback, not a fetch()
+    // const value = await loadCartFetch();
+    await new Promise((resolve) => {
+      loadCart(() => {
+        resolve('a cart value');
+      })
+    });
+  
+  } catch (error) {
+    console.log('Unexpected error. Please try again later!');
+  }
   
   renderCheckoutHeader();
   renderOrderSummary();
