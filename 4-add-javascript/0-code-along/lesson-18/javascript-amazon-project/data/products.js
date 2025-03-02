@@ -126,24 +126,22 @@ export function loadProducts(fun) {
     console.log('Unexpected error. Please try again later!');
   })
   
-  xhr.open('GET', 'https://error.supersimplebackend.dev/products');
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
   xhr.send();
 }
-
-loadProducts();
 
 export function loadProductsFetch() {
   // fetch() uses promises so it works with .then()
   const promise = fetch(
-    'https://supersimplebackend.dev/products'
+    'https://error.supersimplebackend.dev/products'
     ).then((response) => {
       // console.log(response);
       return response.json() // is async code 
       // when we return a promise, it will wait until finish
        
-  }).then((productData) => {
-    // console.log(productData);
-      products = productData.map((productDetails) => {
+    }).then((productData) => {
+        // console.log(productData);
+        products = productData.map((productDetails) => {
         // type in products object is a discriminator property
         if (productDetails.type === 'clothing') {
           return new Clothing(productDetails)
@@ -154,13 +152,19 @@ export function loadProductsFetch() {
         }
       
         return new Products(productDetails);
-      });;
-      
+        });;
+        
       console.log('load products');
-  })
+
+      // error handling for promises
+    }).catch((error) => {
+        console.log('Unexpected error. Please try again later!')
+    })
 
   return promise; // after return out of the function, promise can add another step with .then()
 }
+
+loadProductsFetch();
 
 /*
 loadProductsFetch().then(() => {
