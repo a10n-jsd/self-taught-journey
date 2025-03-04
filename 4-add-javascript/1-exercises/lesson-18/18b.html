@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise: 18b</title>
+  </head>
+  <body>
+    
+    <script>
+      fetch(
+        'https://supersimplebackend.dev/greeting'
+       // fetch() uses promises so it works with .then()
+
+      ).then((response) => {
+        return response.text();
+        // is async code 
+        // when we return a promise, it will wait until finish
+      
+      }).then((text) => {
+        console.log(text);
+      });
+    </script>
+  </body>
+</html>

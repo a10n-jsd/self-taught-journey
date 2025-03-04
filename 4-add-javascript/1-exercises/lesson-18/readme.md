@@ -30,7 +30,7 @@ Notice that even though GET /greeting and POST /greeting use the same URL path /
 
 <hr>
 
-18g. Make a request POST /greeting to https://supersimplebackend.dev, but don’t send any data (don't send a `body`). My backend will give back a 400 error (invalid request). fetch() does not throw an error for 400 errors (only network errors) so we'll manually create an error:
+18g. Make a request POST /greeting to https://supersimplebackend.dev/greeting, but don’t send any data (don't send a `body`). My backend will give back a 400 error (invalid request). fetch() does not throw an error for 400 errors (only network errors) so we'll manually create an error:
 + Check `if (response.status >= 400)` and manually create an error using `throw response;`
 + Add error handling to catch this manual error. When the error is caught, check `if (error.status === 400)` and display the JSON attached to the response in the console: `await error.json()`
 + Otherwise, display 'Network error. Please try again later.’
@@ -65,7 +65,7 @@ and features, so you can practice figuring things out yourself. Good luck!
 
 18m. Make the orders page interactive:
 + “Buy it again” button should add the product to the cart.
-+ “Track package” button should open the tracking page (remember to insert the orderld and productld into the URL parameters).
++ “Track package” button should open the tracking page (remember to insert the orderId and productId into the URL parameters).
 
 <hr>
 
