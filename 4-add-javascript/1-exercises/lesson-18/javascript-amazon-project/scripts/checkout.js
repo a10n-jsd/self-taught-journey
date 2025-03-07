@@ -8,7 +8,7 @@ import { loadProducts, loadProductsFetch } from "../data/products.js";
 // import '../data/car.js';
 // lesson 18:
 // import '../data/backend-practice.js';
-import { loadCart } from "../data/products.js";
+import { loadCart, loadCartFetch } from "../data/products.js";
 
 // Main idea of JavaScript:
 // 1. Save the data (Model)
@@ -32,35 +32,15 @@ loadPage().then(() => {
 */
 
 async function loadPage() {
-  // error handling for async-await with try-catch
   try {
-    // we can manually create an error with 'throw'
-    // and it'll skip the rest of code
-    /*
-    throw 'error' // any value accepted
-    */
+    // give the promises directly to Promise.all (don't await them, otherwise they will run one at a time)
+    await Promise.all([
+      loadProductsFetch(),
+      loadCartFetch()
+    ]);
 
-    await loadProductsFetch();
-
-    // loadCart() still using callback, not a fetch()
-    // const value = await loadCartFetch();
-    await new Promise((resolve, reject) => {
-      // manual error for promise with await
-      // instead go to directly with .catch, it'll go `catch (error){}`
-      // await make it like a normal code
-      /*
-      throw 'error';
-      */
-      loadCart(() => {
-        // if we want to manually create error in the future
-        // use reject();
-        // throw will not work in the future
-        /*
-        reject('error');
-        */
-        resolve('a cart value');
-      })
-    });
+    // await loadProductsFetch();
+    // await loadCartFetch();
   
   } catch (error) {
     console.log('Unexpected error. Please try again later!');
