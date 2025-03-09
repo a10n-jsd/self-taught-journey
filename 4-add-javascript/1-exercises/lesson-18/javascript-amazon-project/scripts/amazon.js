@@ -97,18 +97,6 @@ function renderProductsGrid() {
       })
   })
 
-  function updateCartQuantity() {
-    // Steps to make the cart interactive
-    // 1. calculate the quantity
-    // 2. put the quantity on the page
-
-    // After updated the cart, we can start calculation
-    const cartQuantity = cart.calculateCartQuantity();
-
-    document.querySelector('.js-cart-quantity')
-      .innerHTML = cartQuantity;
-  }
-
   updateCartQuantity();
 
   function displayMessage(productId) {
@@ -137,4 +125,16 @@ function renderProductsGrid() {
     // (2 and 5 are ids that are returned when calling setTimeout).
     timeoutIDs[productId] = timeoutID;
   }
+}
+
+export function updateCartQuantity() {
+  // Steps to make the cart interactive
+  // 1. calculate the quantity
+  // 2. put the quantity on the page
+
+  // After updated the cart, we can start calculation
+  const cartQuantity = cart.calculateCartQuantity();
+
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
 }
