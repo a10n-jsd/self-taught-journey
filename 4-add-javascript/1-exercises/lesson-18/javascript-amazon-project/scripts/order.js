@@ -3,6 +3,7 @@ import { getProduct, loadProductsFetch } from "../data/products.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { formatCurrency } from "./utils/money.js";
 import { renderOrderHeader } from "./order/orderHeader.js";
+import { cart } from "../data/cart-class.js";
 
 async function renderOrderPage() {
   // Since we load products from the backend, getProduct() will return undefined without loadProductsFetch()
@@ -37,19 +38,20 @@ async function renderOrderPage() {
         </div>
   
         <div class="order-details-grid">
-          ${renderProductsOrder(order)}
+          ${renderProductsList(order)}
         </div>
       </div>
     `
   })
 
-  function renderProductsOrder(order) {
+  function renderProductsList(order) {
     let productListHTML = '';
     
     // console.log(order.products);
     order.products.forEach((productDetails) => {
       const product = getProduct(productDetails.productId);
-      
+      // console.log(product);
+      console.log(productDetails);
       productListHTML += 
         `
           <div class="product-image-container">
@@ -71,13 +73,13 @@ async function renderOrderPage() {
 
             <button class="buy-again-button button-primary">
               <img class="buy-again-icon" src="images/icons/buy-again.png">
-              <span class="buy-again-message">Buy it again</span>
+              <span class="buy-again-message js-buy-again" data-product-id=${product.id}>Buy it again</span>
             </button>
 
           </div>
 
           <div class="product-actions">
-            <a href="tracking.html">
+            <a href="tracking.html?orderId=${order.id}&productId=${product.id}">
               <button class="track-package-button button-secondary">
                 Track package
               </button>
@@ -90,6 +92,21 @@ async function renderOrderPage() {
   }
 
   document.querySelector('.js-order-grid').innerHTML = orderHTML;
+
+  document.querySelectorAll('.js-buy-again').forEach((button) => {
+    button.addEventListener('click', () => {
+      
+      cart.addToCart(button.dataset.productId);
+      renderOrderHeader();
+
+      button.innerHTML = 'Added';
+      setTimeout(() => {
+        button.innerHTML = `
+        <span class="buy-again-message">Buy it again</span>
+        `;
+      }, 1000);
+    })
+  });
 }
 
 renderOrderHeader()
