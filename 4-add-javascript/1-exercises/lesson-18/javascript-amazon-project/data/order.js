@@ -15,3 +15,16 @@ export function addOrder(order) {
 function saveToStorage() {
   localStorage.setItem('orders', JSON.stringify(orders));
 }
+
+export function getOrder(orderId) {
+  let matchingOrder;
+
+  orders.forEach((order) => {
+    // save an order details from 'orders' array
+    if (order.id === orderId) {
+      matchingOrder = order;
+    }
+  })
+
+  return matchingOrder;
+}
