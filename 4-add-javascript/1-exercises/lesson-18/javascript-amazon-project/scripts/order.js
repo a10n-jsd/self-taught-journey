@@ -2,7 +2,7 @@ import { orders } from "../data/order.js";
 import { getProduct, loadProductsFetch } from "../data/products.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { formatCurrency } from "./utils/money.js";
-import { renderOrderHeader } from "./order/orderHeader.js";
+import { renderAmazonHeaderRightSection } from "./amazon/amazonHeaderRightSection.js";
 import { cart } from "../data/cart-class.js";
 
 async function renderOrderPage() {
@@ -97,7 +97,7 @@ async function renderOrderPage() {
     button.addEventListener('click', () => {
       
       cart.addToCart(button.dataset.productId);
-      renderOrderHeader();
+      renderAmazonHeaderRightSection();
 
       button.innerHTML = 'Added';
       setTimeout(() => {
@@ -109,5 +109,5 @@ async function renderOrderPage() {
   });
 }
 
-renderOrderHeader()
+renderAmazonHeaderRightSection()
 renderOrderPage();

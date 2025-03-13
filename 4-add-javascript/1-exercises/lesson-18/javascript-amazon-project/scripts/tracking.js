@@ -1,6 +1,7 @@
 import { getOrder } from "../data/order.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { getProduct, loadProductsFetch } from "../data/products.js";
+import { renderAmazonHeaderRightSection } from "./amazon/amazonHeaderRightSection.js";
 
 async function renderTrackingPage() {
   await loadProductsFetch();
@@ -74,4 +75,5 @@ async function renderTrackingPage() {
   document.querySelector('.js-order-tracking').innerHTML = trackingHTML;
 }
 
+renderAmazonHeaderRightSection();
 renderTrackingPage();
