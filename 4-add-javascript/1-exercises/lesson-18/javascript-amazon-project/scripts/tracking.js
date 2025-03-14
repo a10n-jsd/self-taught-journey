@@ -31,6 +31,19 @@ async function renderTrackingPage() {
   });
   // console.log(productDetails);
 
+  // Make Progress bar interactive
+  const currentTime = dayjs();
+  const orderTime = dayjs(order.orderTime);
+  // console.log(orderTime);
+  const deliveryTime = dayjs(productDetails.estimatedDeliveryTime);
+  // console.log(deliveryTime);
+
+  // to calculate percent progress : 
+  // ((currentTime - orderTime) / (deliveryTime - orderTime)) * 100
+  const timeDifference = deliveryTime - orderTime;
+  const percentProgress = (currentTime - orderTime) / timeDifference * 100;
+  // console.log(percentProgress);
+  
   const arrivingTimeString = dayjs(
     productDetails.estimatedDeliveryTime)
     .format('dddd, MMMM D');
@@ -56,19 +69,20 @@ async function renderTrackingPage() {
       <img class="product-image" src="${product.image}">
 
       <div class="progress-labels-container">
-        <div class="progress-label">
+        <div class="progress-label ${percentProgress < 50 ? 'current-status' : ''}">
           Preparing
         </div>
-        <div class="progress-label current-status">
+        <div class="progress-label
+          ${(percentProgress >= 50 && percentProgress < 100) ? 'current-status' : ''}">
           Shipped
         </div>
-        <div class="progress-label">
+        <div class="progress-label ${percentProgress >= 100 ? 'current-status' : ''}">
           Delivered
         </div>
       </div>
 
       <div class="progress-bar-container">
-        <div class="progress-bar"></div>
+        <div class="progress-bar" style="width: ${percentProgress}%"></div>
       </div>
     `;
 
