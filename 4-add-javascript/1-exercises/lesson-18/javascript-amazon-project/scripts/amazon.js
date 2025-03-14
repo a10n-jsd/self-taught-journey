@@ -13,7 +13,22 @@ function renderProductsGrid() {
 
   let productsHTML = '';
 
-  products.forEach((product) => {
+  // Search products
+  const url = new URL(window.location.href);
+  const search = url.searchParams.get('search');
+
+  // use filteredProduct instead products only
+  let filteredProduct = products;
+
+  if (search) {
+    // The filter() method creates a new array filled with elements that pass a test provided by a function.
+      filteredProduct = products.filter((product) => {
+        return product.name.includes(search);
+        // The includes() method returns true if a string contains a specified string.
+      })
+  }
+
+  filteredProduct.forEach((product) => {
 
     productsHTML += `
     <div class="product-container">
@@ -131,6 +146,14 @@ function renderProductsGrid() {
     // (2 and 5 are ids that are returned when calling setTimeout).
     timeoutIDs[productId] = timeoutID;
   }
+
+  document.querySelector('.js-search-button')
+  .addEventListener('click', () => {
+  const searchBarElement = document.querySelector('.js-search-bar');
+  const search = searchBarElement.value;
+  
+  window.location.href = `amazon.html?search=${search}`;
+});
 }
 
 export function updateCartQuantity() {
