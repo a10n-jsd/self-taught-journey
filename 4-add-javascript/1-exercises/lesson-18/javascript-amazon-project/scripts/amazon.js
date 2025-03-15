@@ -168,11 +168,25 @@ function renderProductsGrid() {
 
   document.querySelector('.js-search-button')
   .addEventListener('click', () => {
-  const searchBarElement = document.querySelector('.js-search-bar');
-  const search = searchBarElement.value;
-  
-  window.location.href = `amazon.html?search=${search}`;
-});
+
+    handleSearchProduct();
+  });
+
+  function handleSearchProduct() {
+    const searchBarElement = document.querySelector('.js-search-bar');
+    const search = searchBarElement.value;
+    
+    window.location.href = `amazon.html?search=${search}`;
+  }
+
+  // Extra feature: searching by pressing 'Enter' on the keyboard
+  document.querySelector('.js-search-bar')
+    .addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        handleSearchProduct();
+      }
+  });
+
 }
 
 export function updateCartQuantity() {

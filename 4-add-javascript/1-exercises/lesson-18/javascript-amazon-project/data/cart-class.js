@@ -71,6 +71,12 @@ class Cart {
     this.saveToStorage()
   }
 
+  // Extra feature: make the cart empty after creating an order
+  resetCart() {
+    this.cartItems = [];
+    this.saveToStorage();
+  }
+
   // Step to update delivery option
   // 1. loop through the cart & find the product
   // 2. update the deliveryOptionId of the product

@@ -47,7 +47,11 @@ async function renderTrackingPage() {
   const arrivingTimeString = dayjs(
     productDetails.estimatedDeliveryTime)
     .format('dddd, MMMM D');
-    
+
+  // Extra feature: display "delivered" on the tracking page
+  // if today's date is past the delivery date.
+  const deliveryMessage = currentTime < deliveryTime ? 'Arriving on' : 'Delivered on';  
+
    trackingHTML = 
     `
       <a class="back-to-orders-link link-primary" href="orders.html">
@@ -55,7 +59,7 @@ async function renderTrackingPage() {
       </a>
 
       <div class="delivery-date">
-        Arriving on ${arrivingTimeString}
+        ${deliveryMessage} ${arrivingTimeString}
       </div>
 
       <div class="product-info">

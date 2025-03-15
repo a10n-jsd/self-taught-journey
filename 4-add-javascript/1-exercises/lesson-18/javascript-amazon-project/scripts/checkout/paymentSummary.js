@@ -91,10 +91,13 @@ export function renderPaymentSummary() {
         // console.log(order);
   
         addOrder(order);
-        
+
       } catch (error) {
         console.log('Unexpected error. Please try again later!')
       }
+      
+      // Extra feature: make the cart empty after creating an order
+      cart.resetCart();
 
       window.location.href = 'orders.html';
     })

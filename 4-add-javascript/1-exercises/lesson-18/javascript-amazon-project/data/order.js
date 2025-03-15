@@ -6,10 +6,8 @@ export function addOrder(order) {
   orders.unshift(order);
   saveToStorage();
 
-  // After place order, cart should be empty
-  cart.cartItems.forEach((item) => {
-    cart.removeFromCart(item.productId);
-  })
+  // function removeFromCart should not be placed in here
+  // remember: One function - One action
 }
 
 function saveToStorage() {
