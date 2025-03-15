@@ -22,11 +22,30 @@ function renderProductsGrid() {
 
   if (search) {
     // The filter() method creates a new array filled with elements that pass a test provided by a function.
+    // Read more: https://w3schools.com/jsref/jsref_filter.asp
       filteredProduct = products.filter((product) => {
-        return product.name.includes(search);
-        // The includes() method returns true if a string contains a specified string.
+        let matchingKeyword = false;
+
+        product.keywords.forEach((keyword) => {
+          if (keyword.toLowerCase().includes(search.toLowerCase())) {
+            matchingKeyword = true;
+          }
+        });
+
+        // a test provided by a function
+        return matchingKeyword || product.name.includes(search);
+        // If matchingKeyword is true, the filter() method will include the current product in the new filteredProduct array, based on the test provided by the condition in line 30: keyword.toLowerCase().includes(search.toLowerCase()).
+        
+        // If matchingKeyword is false, the filter() method will use the alternative test product.name.includes(search) to determine whether to include the product in the new filteredProduct array.
+
       })
   }
+
+  // Line 23 explanation
+  // If there is search value, we use custom filteredProduct instead just an original filterProduct
+  // 
+
+
 
   filteredProduct.forEach((product) => {
 
