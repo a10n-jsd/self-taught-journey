@@ -2,7 +2,6 @@
 <!-- HEADER -->
 <div align="center">
     <a href="https://status.badgen.net/"><img src="https://badgen.net/github/commits/a10n-jsd/self-taught-journey" /></a>
-    <a href="https://status.badgen.net"><img src="https://badgen.net/github/last-commit/a10n-jsd/self-taught-journey/main" /></a>
 </div>
 
 <div align="center">
@@ -320,6 +319,7 @@ Learn how to program the behavior of web pages.
 15 - External libraries, MVC | Go to commit: [Lesson](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-01-28&until=2025-01-29) <br> // save data & generate html for delivery options;  Make delivery options interactive; Regenerating delivery option html when data is changed; move orderSummary into its own file; Save data & generate html for payment summary; Make payment summary interactive - mvc practical example; <br> Go to commit: [Exercise](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-01-30&until=2025-02-01) <br> // Pre challenge exercise; Update quantity items at header & payment summary using MVC; Adjust delivery date with isWeekend and use MVC in the rest of code <br> Go to file: <br> [lesson-15](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/1-exercises/lesson-15/javascript-amazon-project) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-15/readme.md)
 16 - Testing | Go to commit: [Lesson](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-02-02&until=2025-02-08) <br> // create automated tests for formatCurrency; add jasmine testing framework; create automated tests for addToCart; Integration test - how the page looks; integration test - how the page behaves; remove duplicate code with hooks: beforeEach() <br> Go to commit: [Exercise](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-02-09&until=2025-02-13) <br> // pre challenge exercise; Test suite: removeFromCart(); Test suite: UpdateDeliveryOption() <br> Go to file: <br> [lesson-16](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/0-code-along/lesson-16/javascript-amazon-project) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-16/readme.md)
 17 - Object Oriented Programming (OOP) | Go to commit: [Lesson](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-02-14&until=2025-02-19) <br> // create oop version of cart.js; create class version of cart.js; make localStorageKey and loadFromStorage() private; convert products into classes; use inheritance & polymorphism to add 'size chart' link; learn more details about classes & 'this' <br> Go to commit: [Exercise](https://github.com/a10n-jsd/self-taught-journey/commits/main/?since=2025-02-21&until=2025-02-22) <br> // pre challenge exercise; add instructionLink and warrantyLink in Appliance Class; add test suite for Product, Clothing, Appliance class; use cart class instead of cart array & update all import <br> Go to file: <br> [lesson-17](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/1-exercises/lesson-17/javascript-amazon-project) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-17/readme.md)
+18 - Final lesson (backend, callbacks, promises, and async await) | Go to commit: [Lesson](https://github.com/a10n-jsd/self-taught-journey/commits/main?since=2025-02-23&until=2025-03-04) <br> // load products form the backend; load products in beforeAll() hook; callback and promises comparison; use Promise.all instead; convert loadProducts from XHR to fetch; convert from promises to async await; error handling for callback; error handling for promises; error handling for async await; manually create error; create order using backend; add URL parameter example <br> Go to commit: [Exercise](https://github.com/a10n-jsd/self-taught-journey/commits/main?since=2025-03-05&until=2025-03-16) <br> // pre challenge exercise; generating HTML for order; make the order page interactive; generating HTML for tracking; make the tracking page interactive; add search feature at the home page; make search case-insensitive and include keyword from product object; add extra features (resetCart, keydown on search bar, and custom deliveryMessage) <br> Go to file: <br> [backend practice](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-18/javascript-amazon-project/data/backend-practice.js) <br> [lesson-18](https://github.com/a10n-jsd/self-taught-journey/tree/main/4-add-javascript/1-exercises/lesson-18/javascript-amazon-project) <br> [readme.md](https://github.com/a10n-jsd/self-taught-journey/blob/main/4-add-javascript/1-exercises/lesson-18/readme.md)
 
 > Personal Notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aclosed+label%3Aadd-javascript).
 
@@ -347,16 +347,14 @@ Distributed under the MIT License. Visit [here](https://opensource.org/license/m
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-Here are some of the people -yes, they are also self-taught developers- I have had the pleasure of learning from:
+Here are some of the folks - yes, some of them self-taught developers - that I have had the pleasure of learning from:
 
 * [Brad Traversy](https://traversymedia.com)
 * [Chris Pennington](https://chrispennington.blog)
-* [Erik Hanchett](https://www.programwitherik.com/)
 * [John Komarnicki](https://johnkomarnicki.com)
 * [Kevin Powell](https://kevinpowell.co)
 * [Simon Bao](https://supersimple.dev)
 
-> *This is the year I started to care about learning to code; you were the most significant reason my attitude changed. I’ll never forget all of you. Thank you!*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
