@@ -332,7 +332,7 @@ Learn how to program the behavior of web pages.
 - [v] Write HTML/CSS
 - [v] Supercharge CSS
 - [L] Build Things
-- [L] Add interactivity with JavaScript
+- [v] Add interactivity with JavaScript
 
 Fun Fact: There are notes in [Closed issues](https://github.com/a10n-jsd/self-taught-journey/issues?q=is%3Aissue+is%3Aclosed).
 
